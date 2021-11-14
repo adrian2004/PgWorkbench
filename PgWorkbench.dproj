@@ -101,8 +101,13 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UnitPrincipal.pas">
-            <Form>Form1</Form>
+            <Form>mainScreen</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnitDM.pas">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
