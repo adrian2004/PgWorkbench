@@ -32,6 +32,9 @@ type
     procedure imgAddDbMouseLeave(Sender: TObject);
     procedure lbAddDbMouseEnter(Sender: TObject);
     procedure lbAddDbMouseLeave(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
+    procedure imgAddDbClick(Sender: TObject);
+    procedure lbAddDbClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +47,18 @@ var
 implementation
 
 {$R *.dfm}
+
+uses UnitDM, unitAddDB;
+
+procedure TmainScreen.btnAddClick(Sender: TObject);
+begin
+  formAddDb.ShowModal;
+end;
+
+procedure TmainScreen.imgAddDbClick(Sender: TObject);
+begin
+  formAddDb.ShowModal;
+end;
 
 procedure TmainScreen.imgAddDbMouseEnter(Sender: TObject);
 begin
@@ -63,6 +78,11 @@ end;
 procedure TmainScreen.imgNewDbMouseLeave(Sender: TObject);
 begin
     lbNewDb.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.lbAddDbClick(Sender: TObject);
+begin
+  formAddDb.ShowModal;
 end;
 
 procedure TmainScreen.lbAddDbMouseEnter(Sender: TObject);

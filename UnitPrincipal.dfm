@@ -88,6 +88,7 @@ object mainScreen: TmainScreen
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
+      OnClick = btnAddClick
     end
     object btnEdit: TBitBtn
       Left = 52
@@ -486,13 +487,14 @@ object mainScreen: TmainScreen
         6A9D52A7CCC5484847252612A4777BCEC3106D323A697766F2D83C57AD0D43D5
         037F3C1E1CACB752CC014088D4FE2F3FED1294DFDE80350000000049454E44AE
         426082}
+      OnClick = imgAddDbClick
       OnMouseEnter = imgAddDbMouseEnter
       OnMouseLeave = imgAddDbMouseLeave
     end
     object lbAddDb: TLabel
       Left = 60
       Top = 135
-      Width = 173
+      Width = 172
       Height = 17
       Cursor = crHandPoint
       Caption = 'Administrar Database existente'
@@ -502,6 +504,7 @@ object mainScreen: TmainScreen
       Font.Name = 'Segoe UI'
       Font.Style = [fsItalic]
       ParentFont = False
+      OnClick = lbAddDbClick
       OnMouseEnter = lbAddDbMouseEnter
       OnMouseLeave = lbAddDbMouseLeave
     end
@@ -531,12 +534,31 @@ object mainScreen: TmainScreen
       Top = 47
       Width = 236
       Height = 602
+      DataSource = DataModule1.dsConexao
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'apelido'
+          Width = 59
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'server'
+          Width = 71
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'database'
+          Visible = True
+        end>
     end
   end
 end
