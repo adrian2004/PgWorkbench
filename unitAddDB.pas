@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Vcl.DBCtrls;
+  Vcl.DBCtrls, System.IniFiles;
 
 type
   TformAddDb = class(TForm)
@@ -16,7 +16,7 @@ type
     Label5: TLabel;
     btNewDB: TButton;
     btCancel: TButton;
-    txtNewApelido: TEdit;
+    txtNewPorta: TEdit;
     txtNewServer: TEdit;
     txtNewUsername: TEdit;
     txtNewPassword: TEdit;
@@ -36,7 +36,9 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM;
+uses UnitNewDM;
+
+
 
 procedure TformAddDb.btCancelClick(Sender: TObject);
 begin
@@ -44,21 +46,34 @@ begin
 end;
 
 procedure TformAddDb.btNewDBClick(Sender: TObject);
+var
+  ArquivoINI: TIniFile;
+  caminho: string;
 begin
-  ShowMessage(
-  txtNewApelido.Text + #13#10 +
-  txtNewServer.Text + #13#10 +
-  txtNewUsername.Text + #13#10 +
-  txtNewPassword.Text + #13#10 +
-  txtNewDatabase.Text
-  );
+  caminho := GetCurrentDir;
 
-  //missing server parameter
-  UnitDM.DataModule1.conConexao.Params.UserName := txtNewUsername.Text;
-  UnitDM.DataModule1.conConexao.Params.Password := txtNewPassword.Text;
-  UnitDM.DataModule1.conConexao.Params.Database := txtNewDatabase.Text;
-  UnitDM.DataModule1.conConexao.Params.DriverID := 'PG';
+  ArquivoINI := TIniFile.Create(caminho + 'CONFIG.ini');
+  ArquivoINI.WriteString('DB', 'USER_NAME', txtNewUsername.Text);
+  ArquivoINI.WriteString('DB', 'PASSWORD', txtNewPassword.Text);
+  ArquivoINI.WriteString('DB', 'DATABASE', txtNewDatabase.Text);
+  ArquivoINI.WriteString('DB', 'SERVER', txtNewServer.Text);
+  ArquivoINI.WriteString('DB', 'PORT', txtNewPorta.Text);
+  ArquivoINI.Free;
+  ShowMessage('Conectado com sucesso!');
 
+  try
+    UnitNewDM.DataModule2.conDb.Close;
+    UnitNewDM.DataModule2.conDb.Params.Clear;
+    UnitNewDM.DataModule2.conDb.Params.Database := arquivoINI.ReadString('DB', 'DATABASE', '');
+    UnitNewDM.DataModule2.conDb.Params.UserName := arquivoINI.ReadString('DB', 'USER_NAME', '');
+    UnitNewDM.DataModule2.conDb.Params.Add('PASSWORD=' + arquivoINI.ReadString('DB', 'PASSWORD', ''));
+    UnitNewDM.DataModule2.conDb.Params.Add('SERVER=' + arquivoINI.ReadString('DB', 'SERVER', ''));
+    UnitNewDM.DataModule2.conDb.Params.Add('PORT=' + arquivoINI.ReadString('DB', 'PORT', ''));
+    UnitNewDM.DataModule2.conDb.DriverName := 'PG';
+    UnitNewDM.DataModule2.conDb.Open;
+  finally
+
+  end;
 end;
 
 end.

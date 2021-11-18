@@ -8,14 +8,13 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.PG,
   FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
-  FireDAC.Comp.DataSet;
+  FireDAC.Comp.DataSet, System.IniFiles;
 
 type
   TDataModule1 = class(TDataModule)
     conConexao: TFDConnection;
     tbConexao: TFDTable;
     dsConexao: TDataSource;
-    conDb: TFDConnection;
   private
     { Private declarations }
   public

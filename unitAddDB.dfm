@@ -14,14 +14,14 @@ object formAddDb: TformAddDb
   TextHeight = 15
   object Label1: TLabel
     Left = 128
-    Top = 67
-    Width = 41
+    Top = 115
+    Width = 28
     Height = 15
-    Caption = 'Apelido'
+    Caption = 'Porta'
   end
   object Label2: TLabel
     Left = 128
-    Top = 117
+    Top = 67
     Width = 32
     Height = 15
     Caption = 'Server'
@@ -53,7 +53,7 @@ object formAddDb: TformAddDb
     Width = 75
     Height = 25
     Caption = 'Registrar'
-    TabOrder = 0
+    TabOrder = 5
     OnClick = btNewDBClick
   end
   object btCancel: TButton
@@ -62,42 +62,43 @@ object formAddDb: TformAddDb
     Width = 75
     Height = 25
     Caption = 'Cancelar'
-    TabOrder = 1
+    TabOrder = 6
     OnClick = btCancelClick
   end
-  object txtNewApelido: TEdit
-    Left = 128
-    Top = 88
-    Width = 121
-    Height = 23
-    TabOrder = 2
-  end
-  object txtNewServer: TEdit
+  object txtNewPorta: TEdit
     Left = 128
     Top = 136
     Width = 121
     Height = 23
-    TabOrder = 3
+    TabOrder = 1
+  end
+  object txtNewServer: TEdit
+    Left = 128
+    Top = 86
+    Width = 121
+    Height = 23
+    TabOrder = 0
   end
   object txtNewUsername: TEdit
     Left = 128
     Top = 186
     Width = 121
     Height = 23
-    TabOrder = 4
+    TabOrder = 2
   end
   object txtNewPassword: TEdit
     Left = 128
     Top = 234
     Width = 121
     Height = 23
-    TabOrder = 5
+    PasswordChar = '*'
+    TabOrder = 3
   end
   object txtNewDatabase: TEdit
     Left = 128
     Top = 282
     Width = 121
     Height = 23
-    TabOrder = 6
+    TabOrder = 4
   end
 end
