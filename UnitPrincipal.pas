@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
   Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, System.IniFiles;
 
 type
   TmainScreen = class(TForm)
@@ -15,7 +15,7 @@ type
     btnEdit: TBitBtn;
     btnRemove: TBitBtn;
     btnNew: TBitBtn;
-    DBGrid1: TDBGrid;
+    gridListDB: TDBGrid;
     Label1: TLabel;
     Edit1: TEdit;
     pnLanding: TPanel;
@@ -35,6 +35,7 @@ type
     procedure btnAddClick(Sender: TObject);
     procedure imgAddDbClick(Sender: TObject);
     procedure lbAddDbClick(Sender: TObject);
+    procedure gridListDBCellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -48,11 +49,16 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, unitAddDB;
+uses UnitDM, unitAddDB, unitConfirmCon;
 
 procedure TmainScreen.btnAddClick(Sender: TObject);
 begin
   formAddDb.ShowModal;
+end;
+
+procedure TmainScreen.gridListDBCellClick(Column: TColumn);
+begin
+  formConfirmCon.ShowModal;
 end;
 
 procedure TmainScreen.imgAddDbClick(Sender: TObject);

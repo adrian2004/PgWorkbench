@@ -10,6 +10,7 @@ object formAddDb: TformAddDb
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 15
   object Label1: TLabel
@@ -46,6 +47,13 @@ object formAddDb: TformAddDb
     Width = 48
     Height = 15
     Caption = 'Database'
+  end
+  object Label6: TLabel
+    Left = 128
+    Top = 19
+    Width = 41
+    Height = 15
+    Caption = 'Apelido'
   end
   object btNewDB: TButton
     Left = 128
@@ -100,5 +108,12 @@ object formAddDb: TformAddDb
     Width = 121
     Height = 23
     TabOrder = 4
+  end
+  object txtNewApelido: TEdit
+    Left = 128
+    Top = 38
+    Width = 121
+    Height = 23
+    TabOrder = 7
   end
 end

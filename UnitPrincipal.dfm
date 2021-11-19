@@ -511,8 +511,8 @@ object mainScreen: TmainScreen
   end
   object pnControl: TPanel
     Left = 8
-    Top = 71
-    Width = 249
+    Top = 87
+    Width = 273
     Height = 661
     TabOrder = 2
     object Label1: TLabel
@@ -529,35 +529,66 @@ object mainScreen: TmainScreen
       Height = 23
       TabOrder = 0
     end
-    object DBGrid1: TDBGrid
+    object gridListDB: TDBGrid
       Left = 5
       Top = 47
-      Width = 236
+      Width = 260
       Height = 602
       DataSource = DataModule1.dsConexao
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      ParentShowHint = False
+      ShowHint = False
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnCellClick = gridListDBCellClick
       Columns = <
         item
           Expanded = False
           FieldName = 'apelido'
-          Width = 59
+          Title.Caption = 'Servidores'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -13
+          Title.Font.Name = 'Segoe UI'
+          Title.Font.Style = [fsBold]
+          Width = 72
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'server'
-          Width = 71
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'username'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'password'
+          Visible = False
+        end
+        item
+          Expanded = False
           FieldName = 'database'
+          Width = 79
           Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'driverid'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'port'
+          Visible = False
         end>
     end
   end

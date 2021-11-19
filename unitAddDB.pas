@@ -21,8 +21,11 @@ type
     txtNewUsername: TEdit;
     txtNewPassword: TEdit;
     txtNewDatabase: TEdit;
+    Label6: TLabel;
+    txtNewApelido: TEdit;
     procedure btNewDBClick(Sender: TObject);
     procedure btCancelClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -36,44 +39,51 @@ implementation
 
 {$R *.dfm}
 
-uses UnitNewDM;
+uses UnitNewDM, UnitDM, unitConfirmCon;
 
 
 
 procedure TformAddDb.btCancelClick(Sender: TObject);
 begin
+  txtNewApelido.Clear;
+  txtNewServer.Clear;
+  txtNewUsername.Clear;
+  txtNewPassword.Clear;
+  txtNewDatabase.Clear;
+  txtNewPorta.Clear;
+
   Close;
 end;
 
 procedure TformAddDb.btNewDBClick(Sender: TObject);
-var
-  ArquivoINI: TIniFile;
-  caminho: string;
+
 begin
-  caminho := GetCurrentDir;
+  UnitDM.DataModule1.queryDM.Close;
+  UnitDM.DataModule1.queryDM.SQL.Clear;
+  UnitDM.DataModule1.queryDM.SQL.Add('INSERT INTO CONNECTION (APELIDO, SERVER, USERNAME, PASSWORD, DATABASE, DRIVERID) ');
+  UnitDM.DataModule1.queryDM.SQL.Add('VALUES (''' + txtNewApelido.Text + ''',''' +  txtNewServer.Text + ''',''' + txtNewUsername.Text + ''',''' + txtNewPassword.Text + ''',''' + txtNewDatabase.Text + ''',''PG'')');
+  UnitDM.DataModule1.queryDM.ExecSQL;
 
-  ArquivoINI := TIniFile.Create(caminho + 'CONFIG.ini');
-  ArquivoINI.WriteString('DB', 'USER_NAME', txtNewUsername.Text);
-  ArquivoINI.WriteString('DB', 'PASSWORD', txtNewPassword.Text);
-  ArquivoINI.WriteString('DB', 'DATABASE', txtNewDatabase.Text);
-  ArquivoINI.WriteString('DB', 'SERVER', txtNewServer.Text);
-  ArquivoINI.WriteString('DB', 'PORT', txtNewPorta.Text);
-  ArquivoINI.Free;
-  ShowMessage('Conectado com sucesso!');
+  ShowMessage('Servidor adcionado!');
 
-  try
-    UnitNewDM.DataModule2.conDb.Close;
-    UnitNewDM.DataModule2.conDb.Params.Clear;
-    UnitNewDM.DataModule2.conDb.Params.Database := arquivoINI.ReadString('DB', 'DATABASE', '');
-    UnitNewDM.DataModule2.conDb.Params.UserName := arquivoINI.ReadString('DB', 'USER_NAME', '');
-    UnitNewDM.DataModule2.conDb.Params.Add('PASSWORD=' + arquivoINI.ReadString('DB', 'PASSWORD', ''));
-    UnitNewDM.DataModule2.conDb.Params.Add('SERVER=' + arquivoINI.ReadString('DB', 'SERVER', ''));
-    UnitNewDM.DataModule2.conDb.Params.Add('PORT=' + arquivoINI.ReadString('DB', 'PORT', ''));
-    UnitNewDM.DataModule2.conDb.DriverName := 'PG';
-    UnitNewDM.DataModule2.conDb.Open;
-  finally
+  txtNewApelido.Clear;
+  txtNewServer.Clear;
+  txtNewUsername.Clear;
+  txtNewPassword.Clear;
+  txtNewDatabase.Clear;
+  txtNewPorta.Clear;
 
-  end;
+  Close;
+end;
+
+procedure TformAddDb.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  txtNewApelido.Clear;
+  txtNewServer.Clear;
+  txtNewUsername.Clear;
+  txtNewPassword.Clear;
+  txtNewDatabase.Clear;
+  txtNewPorta.Clear;
 end;
 
 end.

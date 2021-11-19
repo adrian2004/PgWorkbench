@@ -15,6 +15,14 @@ type
     conConexao: TFDConnection;
     tbConexao: TFDTable;
     dsConexao: TDataSource;
+    queryDM: TFDQuery;
+    tbConexaoapelido: TWideStringField;
+    tbConexaoserver: TWideStringField;
+    tbConexaousername: TWideStringField;
+    tbConexaopassword: TWideStringField;
+    tbConexaodatabase: TWideStringField;
+    tbConexaodriverid: TWideStringField;
+    tbConexaoport: TWideStringField;
   private
     { Private declarations }
   public
