@@ -10,6 +10,7 @@ type
   TformConfirmCon = class(TForm)
     btConfirm: TButton;
     btCancelar: TButton;
+    Label1: TLabel;
     procedure btConfirmClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
   private
@@ -25,7 +26,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, UnitPrincipal;
+uses UnitDM, UnitPrincipal, UnitNewDM;
 
 procedure TformConfirmCon.btCancelarClick(Sender: TObject);
 begin
@@ -33,20 +34,24 @@ begin
 end;
 
 procedure TformConfirmCon.btConfirmClick(Sender: TObject);
-var
-  ArquivoINI: TIniFile;
-  caminho: string;
 begin
-  caminho := GetCurrentDir;
-  ArquivoINI := TIniFile.Create(caminho + 'CONFIG.ini');
-  ArquivoINI.WriteString('DB', 'SERVER', mainScreen.gridListDB.Fields[1].AsString);
-  ArquivoINI.WriteString('DB', 'USER_NAME', mainScreen.gridListDB.Fields[2].AsString);
-  ArquivoINI.WriteString('DB', 'PASSWORD', mainScreen.gridListDB.Fields[3].AsString);
-  ArquivoINI.WriteString('DB', 'DATABASE', mainScreen.gridListDB.Fields[4].AsString);
-  ArquivoINI.WriteString('DB', 'DRIVERID', mainScreen.gridListDB.Fields[5].AsString);
-  ArquivoINI.WriteString('DB', 'PORT', mainScreen.gridListDB.Fields[6].AsString);
-  ArquivoINI.Free;
+  UnitNewDM.DataModule2.conDb.CloneConnection;
+  UnitNewDM.DataModule2.conDb.Params.Clear;
+
+  UnitNewDM.DataModule2.conDb.Params.Values['Server'] := mainScreen.gridListDB.Fields[1].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['User_name'] := mainScreen.gridListDB.Fields[2].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['Password'] := mainScreen.gridListDB.Fields[3].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['Database'] := mainScreen.gridListDB.Fields[4].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['Driverid'] := 'PG';
+  UnitNewDM.DataModule2.conDb.Params.Values['Port'] := mainScreen.gridListDB.Fields[6].AsString;
+
+  UnitNewDM.DataModule2.conDb.Connected := true;
+
   ShowMessage('Conectado com sucesso!');
+
+  UnitNewDM.DataModule2.queryNewDM.SQL.Clear;
+  UnitNewDM.DataModule2.queryNewDM.SQL.Add('SELECT datname FROM pg_database;');
+  UnitNewDM.DataModule2.queryNewDM.ExecSQL;
 
   Close;
 end;

@@ -39,7 +39,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitNewDM, UnitDM, unitConfirmCon;
+uses UnitNewDM, UnitDM, unitConfirmCon, UnitPrincipal;
 
 
 
@@ -52,12 +52,15 @@ begin
   txtNewDatabase.Clear;
   txtNewPorta.Clear;
 
+  UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
+
   Close;
 end;
 
 procedure TformAddDb.btNewDBClick(Sender: TObject);
 
 begin
+
   UnitDM.DataModule1.queryDM.Close;
   UnitDM.DataModule1.queryDM.SQL.Clear;
   UnitDM.DataModule1.queryDM.SQL.Add('INSERT INTO CONNECTION (APELIDO, SERVER, USERNAME, PASSWORD, DATABASE, DRIVERID) ');
@@ -73,6 +76,8 @@ begin
   txtNewDatabase.Clear;
   txtNewPorta.Clear;
 
+  UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
+
   Close;
 end;
 
@@ -84,6 +89,8 @@ begin
   txtNewPassword.Clear;
   txtNewDatabase.Clear;
   txtNewPorta.Clear;
+
+  UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
 end;
 
 end.
