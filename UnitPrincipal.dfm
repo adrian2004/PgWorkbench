@@ -533,7 +533,7 @@ object mainScreen: TmainScreen
       Left = 5
       Top = 47
       Width = 260
-      Height = 602
+      Height = 307
       DataSource = DataModule1.dsConexao
       Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ParentShowHint = False
@@ -561,7 +561,6 @@ object mainScreen: TmainScreen
         item
           Expanded = False
           FieldName = 'server'
-          Width = 64
           Visible = True
         end
         item
@@ -590,6 +589,19 @@ object mainScreen: TmainScreen
           FieldName = 'port'
           Visible = False
         end>
+    end
+    object DBGrid1: TDBGrid
+      Left = 5
+      Top = 360
+      Width = 260
+      Height = 273
+      DataSource = DataModule2.DataSource1
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
     end
   end
 end

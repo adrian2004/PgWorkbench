@@ -47,11 +47,9 @@ begin
 
   UnitNewDM.DataModule2.conDb.Connected := true;
 
-  ShowMessage('Conectado com sucesso!');
+  UnitNewDM.DataModule2.ClientDataSet1.Open;
 
-  UnitNewDM.DataModule2.queryNewDM.SQL.Clear;
-  UnitNewDM.DataModule2.queryNewDM.SQL.Add('SELECT datname FROM pg_database;');
-  UnitNewDM.DataModule2.queryNewDM.ExecSQL;
+  ShowMessage('Conectado com sucesso!');
 
   Close;
 end;

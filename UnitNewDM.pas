@@ -8,14 +8,15 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.PG,
   FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
-  FireDAC.Comp.DataSet;
+  FireDAC.Comp.DataSet, Datasnap.Provider, Datasnap.DBClient;
 
 type
   TDataModule2 = class(TDataModule)
     conDb: TFDConnection;
-    FDTable1: TFDTable;
     DataSource1: TDataSource;
     queryNewDM: TFDQuery;
+    DataSetProvider1: TDataSetProvider;
+    ClientDataSet1: TClientDataSet;
 //    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

@@ -24,6 +24,7 @@ type
     lbNewDb: TLabel;
     imgAddDb: TImage;
     lbAddDb: TLabel;
+    DBGrid1: TDBGrid;
     procedure lbNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseLeave(Sender: TObject);
@@ -49,7 +50,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, unitAddDB, unitConfirmCon;
+uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM;
 
 procedure TmainScreen.btnAddClick(Sender: TObject);
 begin
