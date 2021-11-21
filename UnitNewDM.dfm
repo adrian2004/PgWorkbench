@@ -19,8 +19,8 @@ object DataModule2: TDataModule2
     Connection = conDb
     SQL.Strings = (
       
-        'SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname != '#39 +
-        'pg_catalog'#39' AND schemaname != '#39'information_schema'#39';')
+        'SELECT tablename as Tabelas FROM pg_catalog.pg_tables WHERE sche' +
+        'maname != '#39'pg_catalog'#39' AND schemaname != '#39'information_schema'#39';')
     Left = 136
     Top = 40
   end

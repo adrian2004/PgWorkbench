@@ -6,7 +6,8 @@ uses
   UnitDM in 'UnitDM.pas' {DataModule1: TDataModule},
   unitAddDB in 'unitAddDB.pas' {formAddDb},
   UnitNewDM in 'UnitNewDM.pas' {DataModule2: TDataModule},
-  unitConfirmCon in 'unitConfirmCon.pas' {formConfirmCon};
+  unitConfirmCon in 'unitConfirmCon.pas' {formConfirmCon},
+  UnitQuery in 'UnitQuery.pas' {queryEditor};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(TformAddDb, formAddDb);
   Application.CreateForm(TDataModule2, DataModule2);
   Application.CreateForm(TformConfirmCon, formConfirmCon);
+  Application.CreateForm(TqueryEditor, queryEditor);
   Application.Run;
 end.

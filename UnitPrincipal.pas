@@ -25,6 +25,8 @@ type
     imgAddDb: TImage;
     lbAddDb: TLabel;
     DBGrid1: TDBGrid;
+    lbOpenQuery: TLabel;
+    imgQuery: TImage;
     procedure lbNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseLeave(Sender: TObject);
@@ -37,6 +39,9 @@ type
     procedure imgAddDbClick(Sender: TObject);
     procedure lbAddDbClick(Sender: TObject);
     procedure gridListDBCellClick(Column: TColumn);
+    procedure lbOpenQueryClick(Sender: TObject);
+    procedure lbOpenQueryMouseEnter(Sender: TObject);
+    procedure lbOpenQueryMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM;
+uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM, UnitQuery;
 
 procedure TmainScreen.btnAddClick(Sender: TObject);
 begin
@@ -64,17 +69,18 @@ end;
 
 procedure TmainScreen.imgAddDbClick(Sender: TObject);
 begin
-  formAddDb.ShowModal;
+  queryEditor.Show;
+  queryEditor.Parent := pnLanding;
 end;
 
 procedure TmainScreen.imgAddDbMouseEnter(Sender: TObject);
 begin
-  lbAddDb.Font.Style := [fsUnderline,fsItalic];
+  lbOpenQuery.Font.Style := [fsUnderline,fsItalic];
 end;
 
 procedure TmainScreen.imgAddDbMouseLeave(Sender: TObject);
 begin
-lbAddDb.Font.Style := [fsItalic];
+lbOpenQuery.Font.Style := [fsItalic];
 end;
 
 procedure TmainScreen.imgNewDbMouseEnter(Sender: TObject);
@@ -110,6 +116,22 @@ end;
 procedure TmainScreen.lbNewDbMouseLeave(Sender: TObject);
 begin
     lbNewDb.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.lbOpenQueryClick(Sender: TObject);
+begin
+  queryEditor.Show;
+  queryEditor.Parent := pnLanding;
+end;
+
+procedure TmainScreen.lbOpenQueryMouseEnter(Sender: TObject);
+begin
+  lbOpenQuery.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TmainScreen.lbOpenQueryMouseLeave(Sender: TObject);
+begin
+  lbOpenQuery.Font.Style := [fsItalic];
 end;
 
 end.

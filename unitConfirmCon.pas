@@ -35,7 +35,9 @@ end;
 
 procedure TformConfirmCon.btConfirmClick(Sender: TObject);
 begin
-  UnitNewDM.DataModule2.conDb.CloneConnection;
+  UnitNewDM.DataModule2.ClientDataSet1.Close;
+  UnitNewDM.DataModule2.conDb.Connected := false;
+
   UnitNewDM.DataModule2.conDb.Params.Clear;
 
   UnitNewDM.DataModule2.conDb.Params.Values['Server'] := mainScreen.gridListDB.Fields[1].AsString;
