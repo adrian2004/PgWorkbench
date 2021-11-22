@@ -55,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM, UnitQuery;
+uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM, UnitQuery, UnitSelectServer;
 
 procedure TmainScreen.btnAddClick(Sender: TObject);
 begin
@@ -64,13 +64,14 @@ end;
 
 procedure TmainScreen.gridListDBCellClick(Column: TColumn);
 begin
-  formConfirmCon.ShowModal;
+  formSelectServer.ShowModal;
 end;
 
 procedure TmainScreen.imgAddDbClick(Sender: TObject);
 begin
   queryEditor.Show;
   queryEditor.Parent := pnLanding;
+  queryEditor.memoQuery.SetFocus;
 end;
 
 procedure TmainScreen.imgAddDbMouseEnter(Sender: TObject);
@@ -122,6 +123,7 @@ procedure TmainScreen.lbOpenQueryClick(Sender: TObject);
 begin
   queryEditor.Show;
   queryEditor.Parent := pnLanding;
+  queryEditor.memoQuery.SetFocus;
 end;
 
 procedure TmainScreen.lbOpenQueryMouseEnter(Sender: TObject);

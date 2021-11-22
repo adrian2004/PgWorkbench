@@ -25,4 +25,6 @@ implementation
 
 {$R *.dfm}
 
+uses UnitNewDM;
+
 end.

@@ -13,10 +13,11 @@ uses
 type
   TDataModule2 = class(TDataModule)
     conDb: TFDConnection;
-    DataSource1: TDataSource;
+    dsNew: TDataSource;
     queryNewDM: TFDQuery;
-    DataSetProvider1: TDataSetProvider;
-    ClientDataSet1: TClientDataSet;
+    dspNew: TDataSetProvider;
+    cdNew: TClientDataSet;
+    queryAlterDM: TFDQuery;
 //    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

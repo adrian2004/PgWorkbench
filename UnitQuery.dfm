@@ -2,6 +2,8 @@ object queryEditor: TqueryEditor
   Left = 0
   Top = 0
   Align = alClient
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Editor SQL'
   ClientHeight = 433
   ClientWidth = 631
@@ -27,6 +29,7 @@ object queryEditor: TqueryEditor
         Top = 16
         Width = 561
         Height = 376
+        DataSource = DataModule2.DataSource1
         TabOrder = 0
       end
     end

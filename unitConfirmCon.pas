@@ -26,7 +26,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, UnitPrincipal, UnitNewDM;
+uses UnitDM, UnitPrincipal, UnitNewDM, UnitSelectServer;
 
 procedure TformConfirmCon.btCancelarClick(Sender: TObject);
 begin
@@ -35,7 +35,7 @@ end;
 
 procedure TformConfirmCon.btConfirmClick(Sender: TObject);
 begin
-  UnitNewDM.DataModule2.ClientDataSet1.Close;
+  UnitNewDM.DataModule2.cdNew.Close;
   UnitNewDM.DataModule2.conDb.Connected := false;
 
   UnitNewDM.DataModule2.conDb.Params.Clear;
@@ -49,11 +49,12 @@ begin
 
   UnitNewDM.DataModule2.conDb.Connected := true;
 
-  UnitNewDM.DataModule2.ClientDataSet1.Open;
+  UnitNewDM.DataModule2.cdNew.Open;
 
   ShowMessage('Conectado com sucesso!');
 
   Close;
+  formSelectServer.Close;
 end;
 
 end.
