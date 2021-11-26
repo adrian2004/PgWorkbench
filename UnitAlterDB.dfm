@@ -1,7 +1,7 @@
-object Form1: TForm1
+object formAlterDb: TformAlterDb
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'formAlterDb'
   ClientHeight = 433
   ClientWidth = 622
   Color = clBtnFace
@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object Label1: TLabel
@@ -69,6 +70,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Cancelar'
     TabOrder = 1
+    OnClick = btCancelClick
   end
   object txtNewPorta: TEdit
     Left = 128

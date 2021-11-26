@@ -1,5 +1,5 @@
 object DataModule2: TDataModule2
-  Height = 317
+  Height = 328
   Width = 486
   PixelsPerInch = 120
   object conDb: TFDConnection

@@ -29,7 +29,7 @@ implementation
 
 {$R *.dfm}
 
-uses unitConfirmCon, UnitPrincipal, UnitNewDM;
+uses unitConfirmCon, UnitPrincipal, UnitNewDM, UnitAlterDB;
 
 procedure TformSelectServer.btCancSSClick(Sender: TObject);
 begin
@@ -42,20 +42,8 @@ begin
 end;
 
 procedure TformSelectServer.btEditSSClick(Sender: TObject);
-var
-server :String;
-database: String;
-sql :String;
 begin
-  server := mainScreen.gridListDB.Fields[1].AsString;
-  database := mainScreen.gridListDB.Fields[4].AsString;
-
-   UnitNewDM.DataModule2.queryAlterDM.SQL.Add('UPDATE connection SET apelido=:apelido WHERE server = '+''''+server+''''+' AND database = '+''''+database+'''');
-   UnitNewDM.DataModule2.queryAlterDM.SQL.Add('UPDATE connection SET server=:server WHERE server = '+''''+server+''''+' AND database = '+''''+database+'''');
-   UnitNewDM.DataModule2.queryAlterDM.SQL.Add('UPDATE connection SET username=:username WHERE server = '+''''+server+''''+' AND database = '+''''+database+'''');
-   UnitNewDM.DataModule2.queryAlterDM.SQL.Add('UPDATE connection SET password=:password WHERE server = '+''''+server+''''+' AND database = '+''''+database+'''');
-   UnitNewDM.DataModule2.queryAlterDM.SQL.Add('UPDATE connection SET database=:database WHERE server = '+''''+server+''''+' AND database = '+''''+database+'''');
-   UnitNewDM.DataModule2.queryAlterDM.SQL.Add('UPDATE connection SET port=:port WHERE server = '+''''+server+''''+' AND database = '+''''+database+'''');
+  UnitAlterDB.formAlterDb.ShowModal;
 end;
 
 end.

@@ -9,7 +9,7 @@ uses
   unitConfirmCon in 'unitConfirmCon.pas' {formConfirmCon},
   UnitQuery in 'UnitQuery.pas' {queryEditor},
   UnitSelectServer in 'UnitSelectServer.pas' {formSelectServer},
-  UnitAlterDB in 'UnitAlterDB.pas' {Form1};
+  UnitAlterDB in 'UnitAlterDB.pas' {formAlterDb};
 
 {$R *.res}
 
@@ -23,6 +23,6 @@ begin
   Application.CreateForm(TformConfirmCon, formConfirmCon);
   Application.CreateForm(TqueryEditor, queryEditor);
   Application.CreateForm(TformSelectServer, formSelectServer);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TformAlterDb, formAlterDb);
   Application.Run;
 end.
