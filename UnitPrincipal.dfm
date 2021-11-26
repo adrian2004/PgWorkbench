@@ -428,7 +428,7 @@ object mainScreen: TmainScreen
     end
     object imgAddDb: TImage
       Left = 16
-      Top = 128
+      Top = 125
       Width = 32
       Height = 32
       Cursor = crHandPoint
@@ -631,9 +631,9 @@ object mainScreen: TmainScreen
         D9D9D97A7A7A060606272727C6C6C6C6C6C62626260606067B7B7BD9D9D97979
         79060606282828C7C7C7F6F6F6CCCCCC8E8E8E9E9E9EFCFCFCFFFFFFFFFFFFFF
         FFFF}
-      OnClick = imgAddDbClick
-      OnMouseEnter = imgAddDbMouseEnter
-      OnMouseLeave = imgAddDbMouseLeave
+      OnClick = imgQueryClick
+      OnMouseEnter = imgQueryMouseEnter
+      OnMouseLeave = imgQueryMouseLeave
     end
   end
   object pnControl: TPanel
@@ -725,7 +725,7 @@ object mainScreen: TmainScreen
       Top = 360
       Width = 260
       Height = 273
-      DataSource = DataModule2.DataSource1
+      DataSource = DataModule2.dsNew
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

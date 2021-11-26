@@ -9,9 +9,13 @@ uses
 
 type
   TqueryEditor = class(TForm)
-    PageControl1: TPageControl;
+    pgcQuery: TPageControl;
     TabSheet1: TTabSheet;
-    memoQuery: TDBMemo;
+    memoQuery1: TMemo;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,5 +30,17 @@ implementation
 {$R *.dfm}
 
 uses UnitNewDM;
+
+procedure TqueryEditor.Button1Click(Sender: TObject);
+begin
+  UnitNewDM.DataModule2.queryMain.SQL.Add(memoQuery1.Text);
+  UnitNewDM.DataModule2.queryMain.ExecSQL;
+  ShowMessage('Executado com sucesso!');
+end;
+
+procedure TqueryEditor.Button2Click(Sender: TObject);
+begin
+  Close;
+end;
 
 end.

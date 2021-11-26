@@ -36,12 +36,15 @@ type
     procedure lbAddDbMouseEnter(Sender: TObject);
     procedure lbAddDbMouseLeave(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
-    procedure imgAddDbClick(Sender: TObject);
     procedure lbAddDbClick(Sender: TObject);
     procedure gridListDBCellClick(Column: TColumn);
     procedure lbOpenQueryClick(Sender: TObject);
     procedure lbOpenQueryMouseEnter(Sender: TObject);
     procedure lbOpenQueryMouseLeave(Sender: TObject);
+    procedure imgQueryClick(Sender: TObject);
+    procedure imgAddDbClick(Sender: TObject);
+    procedure imgQueryMouseEnter(Sender: TObject);
+    procedure imgQueryMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,29 +72,42 @@ end;
 
 procedure TmainScreen.imgAddDbClick(Sender: TObject);
 begin
-  queryEditor.Show;
-  queryEditor.Parent := pnLanding;
-  queryEditor.memoQuery.SetFocus;
+  formAddDb.ShowModal;
 end;
 
 procedure TmainScreen.imgAddDbMouseEnter(Sender: TObject);
 begin
-  lbOpenQuery.Font.Style := [fsUnderline,fsItalic];
+  lbAddDb.Font.Style := [fsUnderline,fsItalic];
 end;
 
 procedure TmainScreen.imgAddDbMouseLeave(Sender: TObject);
 begin
-lbOpenQuery.Font.Style := [fsItalic];
+  lbAddDb.Font.Style := [fsItalic];
 end;
 
 procedure TmainScreen.imgNewDbMouseEnter(Sender: TObject);
 begin
-    lbNewDb.Font.Style := [fsUnderline,fsItalic];
+  lbNewDb.Font.Style := [fsUnderline,fsItalic];
 end;
 
 procedure TmainScreen.imgNewDbMouseLeave(Sender: TObject);
 begin
     lbNewDb.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.imgQueryClick(Sender: TObject);
+begin
+  queryEditor.ShowModal;
+end;
+
+procedure TmainScreen.imgQueryMouseEnter(Sender: TObject);
+begin
+  lbOpenQuery.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TmainScreen.imgQueryMouseLeave(Sender: TObject);
+begin
+  lbOpenQuery.Font.Style := [fsItalic];
 end;
 
 procedure TmainScreen.lbAddDbClick(Sender: TObject);
@@ -121,9 +137,7 @@ end;
 
 procedure TmainScreen.lbOpenQueryClick(Sender: TObject);
 begin
-  queryEditor.Show;
-  queryEditor.Parent := pnLanding;
-  queryEditor.memoQuery.SetFocus;
+  queryEditor.ShowModal;
 end;
 
 procedure TmainScreen.lbOpenQueryMouseEnter(Sender: TObject);
