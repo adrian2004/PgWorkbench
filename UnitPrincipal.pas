@@ -42,6 +42,8 @@ type
     procedure imgAddDbClick(Sender: TObject);
     procedure imgQueryMouseEnter(Sender: TObject);
     procedure imgQueryMouseLeave(Sender: TObject);
+    procedure lbNewDbClick(Sender: TObject);
+    procedure imgNewDbClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,7 +57,8 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM, UnitQuery, UnitSelectServer;
+uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM, UnitQuery, UnitSelectServer,
+  unitCreateServer;
 
 procedure TmainScreen.btnRunSqlClick(Sender: TObject);
 begin
@@ -80,6 +83,11 @@ end;
 procedure TmainScreen.imgAddDbMouseLeave(Sender: TObject);
 begin
   lbAddDb.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.imgNewDbClick(Sender: TObject);
+begin
+  unitCreateServer.Form2.ShowModal;
 end;
 
 procedure TmainScreen.imgNewDbMouseEnter(Sender: TObject);
@@ -120,6 +128,11 @@ end;
 procedure TmainScreen.lbAddDbMouseLeave(Sender: TObject);
 begin
   lbAddDb.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.lbNewDbClick(Sender: TObject);
+begin
+  unitCreateServer.Form2.ShowModal;
 end;
 
 procedure TmainScreen.lbNewDbMouseEnter(Sender: TObject);

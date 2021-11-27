@@ -1,18 +1,18 @@
 object DataModule2: TDataModule2
-  Height = 328
-  Width = 486
+  Height = 163
+  Width = 263
   PixelsPerInch = 120
   object conDb: TFDConnection
     Params.Strings = (
       'DriverID=PG')
     LoginPrompt = False
-    Left = 56
-    Top = 40
+    Left = 8
+    Top = 8
   end
   object dsNew: TDataSource
     DataSet = cdNew
-    Left = 336
-    Top = 40
+    Left = 200
+    Top = 8
   end
   object queryNewDM: TFDQuery
     MasterSource = dsNew
@@ -21,29 +21,24 @@ object DataModule2: TDataModule2
       
         'SELECT tablename as Tabelas FROM pg_catalog.pg_tables WHERE sche' +
         'maname != '#39'pg_catalog'#39' AND schemaname != '#39'information_schema'#39';')
-    Left = 144
-    Top = 56
+    Left = 56
+    Top = 8
   end
   object dspNew: TDataSetProvider
     DataSet = queryNewDM
-    Left = 224
-    Top = 40
+    Left = 104
+    Top = 8
   end
   object cdNew: TClientDataSet
     Aggregates = <>
     Params = <>
     ProviderName = 'dspNew'
-    Left = 280
-    Top = 48
-  end
-  object queryAlterDM: TFDQuery
-    Connection = conDb
-    Left = 136
-    Top = 128
+    Left = 152
+    Top = 8
   end
   object queryMain: TFDQuery
     Connection = conDb
-    Left = 128
-    Top = 224
+    Left = 56
+    Top = 82
   end
 end

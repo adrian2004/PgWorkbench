@@ -17,7 +17,6 @@ type
     queryNewDM: TFDQuery;
     dspNew: TDataSetProvider;
     cdNew: TClientDataSet;
-    queryAlterDM: TFDQuery;
     queryMain: TFDQuery;
 //    procedure DataModuleCreate(Sender: TObject);
   private

@@ -61,7 +61,7 @@ object formAlterDb: TformAlterDb
     Width = 75
     Height = 25
     Caption = 'Alterar'
-    TabOrder = 0
+    TabOrder = 6
     OnClick = btNewDBClick
   end
   object btCancel: TButton
@@ -70,7 +70,7 @@ object formAlterDb: TformAlterDb
     Width = 75
     Height = 25
     Caption = 'Cancelar'
-    TabOrder = 1
+    TabOrder = 7
     OnClick = btCancelClick
   end
   object txtNewPorta: TEdit
@@ -85,14 +85,14 @@ object formAlterDb: TformAlterDb
     Top = 86
     Width = 121
     Height = 23
-    TabOrder = 3
+    TabOrder = 1
   end
   object txtNewUsername: TEdit
     Left = 128
     Top = 186
     Width = 121
     Height = 23
-    TabOrder = 4
+    TabOrder = 3
   end
   object txtNewPassword: TEdit
     Left = 128
@@ -100,20 +100,20 @@ object formAlterDb: TformAlterDb
     Width = 121
     Height = 23
     PasswordChar = '*'
-    TabOrder = 5
+    TabOrder = 4
   end
   object txtNewDatabase: TEdit
     Left = 128
     Top = 282
     Width = 121
     Height = 23
-    TabOrder = 6
+    TabOrder = 5
   end
   object txtNewApelido: TEdit
     Left = 128
     Top = 38
     Width = 121
     Height = 23
-    TabOrder = 7
+    TabOrder = 0
   end
 end

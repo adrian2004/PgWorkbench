@@ -69,8 +69,8 @@ object mainScreen: TmainScreen
     Height = 630
     TabOrder = 1
     object imgNewDb: TImage
-      Left = 16
-      Top = 80
+      Left = 22
+      Top = 87
       Width = 32
       Height = 32
       Cursor = crHandPoint
@@ -174,6 +174,7 @@ object mainScreen: TmainScreen
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFF}
+      OnClick = imgNewDbClick
       OnMouseEnter = imgNewDbMouseEnter
       OnMouseLeave = imgNewDbMouseLeave
     end
@@ -190,6 +191,7 @@ object mainScreen: TmainScreen
       Font.Name = 'Segoe UI'
       Font.Style = [fsItalic]
       ParentFont = False
+      OnClick = lbNewDbClick
       OnMouseEnter = lbNewDbMouseEnter
       OnMouseLeave = lbNewDbMouseLeave
     end

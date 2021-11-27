@@ -10,7 +10,8 @@ uses
   UnitQuery in 'UnitQuery.pas' {queryEditor},
   UnitSelectServer in 'UnitSelectServer.pas' {formSelectServer},
   UnitAlterDB in 'UnitAlterDB.pas' {formAlterDb},
-  unitConfirmExclude in 'unitConfirmExclude.pas' {Form1};
+  unitConfirmExclude in 'unitConfirmExclude.pas' {Form1},
+  unitCreateServer in 'unitCreateServer.pas' {Form2};
 
 {$R *.res}
 
@@ -26,5 +27,6 @@ begin
   Application.CreateForm(TformSelectServer, formSelectServer);
   Application.CreateForm(TformAlterDb, formAlterDb);
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.
