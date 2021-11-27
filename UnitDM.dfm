@@ -28,10 +28,12 @@ object DataModule1: TDataModule1
     object tbConexaoserver: TWideStringField
       FieldName = 'server'
       Origin = 'server'
+      Size = 50
     end
     object tbConexaousername: TWideStringField
       FieldName = 'username'
       Origin = 'username'
+      Size = 30
     end
     object tbConexaopassword: TWideStringField
       FieldName = 'password'
@@ -51,6 +53,10 @@ object DataModule1: TDataModule1
       FieldName = 'port'
       Origin = 'port'
       Size = 10
+    end
+    object tbConexaoid_con: TIntegerField
+      FieldName = 'id_con'
+      Origin = 'id_con'
     end
   end
   object dsConexao: TDataSource

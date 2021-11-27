@@ -11,10 +11,7 @@ uses
 type
   TmainScreen = class(TForm)
     pnNavbar: TPanel;
-    btnAdd: TBitBtn;
-    btnEdit: TBitBtn;
-    btnRemove: TBitBtn;
-    btnNew: TBitBtn;
+    btnRunSql: TBitBtn;
     gridListDB: TDBGrid;
     Label1: TLabel;
     Edit1: TEdit;
@@ -35,7 +32,7 @@ type
     procedure imgAddDbMouseLeave(Sender: TObject);
     procedure lbAddDbMouseEnter(Sender: TObject);
     procedure lbAddDbMouseLeave(Sender: TObject);
-    procedure btnAddClick(Sender: TObject);
+    procedure btnRunSqlClick(Sender: TObject);
     procedure lbAddDbClick(Sender: TObject);
     procedure gridListDBCellClick(Column: TColumn);
     procedure lbOpenQueryClick(Sender: TObject);
@@ -60,7 +57,7 @@ implementation
 
 uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM, UnitQuery, UnitSelectServer;
 
-procedure TmainScreen.btnAddClick(Sender: TObject);
+procedure TmainScreen.btnRunSqlClick(Sender: TObject);
 begin
   formAddDb.ShowModal;
 end;

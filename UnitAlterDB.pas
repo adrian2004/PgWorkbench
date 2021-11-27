@@ -24,6 +24,7 @@ type
     txtNewApelido: TEdit;
     procedure FormShow(Sender: TObject);
     procedure btCancelClick(Sender: TObject);
+    procedure btNewDBClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,11 +38,40 @@ implementation
 
 {$R *.dfm}
 
-uses UnitPrincipal;
+uses UnitPrincipal, UnitDM;
 
 procedure TformAlterDb.btCancelClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TformAlterDb.btNewDBClick(Sender: TObject);
+begin
+  UnitDM.DataModule1.queryDM.Close;
+  UnitDM.DataModule1.queryDM.SQL.Clear;
+  UnitDM.DataModule1.queryDM.SQL.Add('UPDATE connection SET ');
+  UnitDM.DataModule1.queryDM.SQL.Add('apelido = ''' + txtNewApelido.Text + ''' , ');
+  UnitDM.DataModule1.queryDM.SQL.Add('server = ''' + txtNewServer.Text + ''' , ');
+  UnitDM.DataModule1.queryDM.SQL.Add('port = ''' + txtNewPorta.Text + ''' , ');
+  UnitDM.DataModule1.queryDM.SQL.Add('username = ''' + txtNewUsername.Text + ''' , ');
+  UnitDM.DataModule1.queryDM.SQL.Add('password = ''' + txtNewPassword.Text + ''' , ');
+  UnitDM.DataModule1.queryDM.SQL.Add('database = ''' + txtNewDatabase.Text+ ''' ');
+  UnitDM.DataModule1.queryDM.SQL.Add('WHERE id_con = ' + mainScreen.gridListDB.Fields[7].AsString);
+  UnitDM.DataModule1.queryDM.ExecSQL;
+
+  ShowMessage('Servidor alterado!');
+
+  txtNewApelido.Clear;
+  txtNewServer.Clear;
+  txtNewUsername.Clear;
+  txtNewPassword.Clear;
+  txtNewDatabase.Clear;
+  txtNewPorta.Clear;
+
+  UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
+
+  Close;
+
 end;
 
 procedure TformAlterDb.FormShow(Sender: TObject);

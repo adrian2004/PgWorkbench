@@ -60,8 +60,9 @@ object formAlterDb: TformAlterDb
     Top = 336
     Width = 75
     Height = 25
-    Caption = 'Registrar'
+    Caption = 'Alterar'
     TabOrder = 0
+    OnClick = btNewDBClick
   end
   object btCancel: TButton
     Left = 224

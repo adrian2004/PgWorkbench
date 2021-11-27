@@ -23,6 +23,7 @@ type
     tbConexaodatabase: TWideStringField;
     tbConexaodriverid: TWideStringField;
     tbConexaoport: TWideStringField;
+    tbConexaoid_con: TIntegerField;
   private
     { Private declarations }
   public
