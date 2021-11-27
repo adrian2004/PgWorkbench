@@ -16,6 +16,7 @@ type
     procedure btConnSSClick(Sender: TObject);
     procedure btCancSSClick(Sender: TObject);
     procedure btEditSSClick(Sender: TObject);
+    procedure btDelSSClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,7 +30,7 @@ implementation
 
 {$R *.dfm}
 
-uses unitConfirmCon, UnitPrincipal, UnitNewDM, UnitAlterDB;
+uses unitConfirmCon, UnitPrincipal, UnitNewDM, UnitAlterDB, unitConfirmExclude;
 
 procedure TformSelectServer.btCancSSClick(Sender: TObject);
 begin
@@ -39,6 +40,11 @@ end;
 procedure TformSelectServer.btConnSSClick(Sender: TObject);
 begin
   formConfirmCon.ShowModal;
+end;
+
+procedure TformSelectServer.btDelSSClick(Sender: TObject);
+begin
+  unitConfirmExclude.Form1.ShowModal;
 end;
 
 procedure TformSelectServer.btEditSSClick(Sender: TObject);

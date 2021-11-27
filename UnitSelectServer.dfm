@@ -69,6 +69,7 @@ object formSelectServer: TformSelectServer
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
+    OnClick = btDelSSClick
   end
   object btCancSS: TButton
     Left = 271
