@@ -49,6 +49,11 @@ begin
 
   UnitDM.DataModule1.queryDM.Close;
   UnitDM.DataModule1.queryDM.SQL.Clear;
+  UnitDM.DataModule1.queryDM.SQL.Add('CREATE DATABASE ' + txtNewDatabase.Text);
+  UnitDM.DataModule1.queryDM.ExecSQL;
+
+  UnitDM.DataModule1.queryDM.Close;
+  UnitDM.DataModule1.queryDM.SQL.Clear;
   UnitDM.DataModule1.queryDM.SQL.Add('INSERT INTO CONNECTION (APELIDO, SERVER, PORT, USERNAME, PASSWORD, DATABASE, DRIVERID) ');
   UnitDM.DataModule1.queryDM.SQL.Add('VALUES (''' + txtNewApelido.Text + ''',''' +  txtNewServer.Text + ''',''' +  txtNewPorta.Text + ''',''' + txtNewUsername.Text + ''',''' + txtNewPassword.Text + ''',''' + txtNewDatabase.Text + ''',''PG'')');
   UnitDM.DataModule1.queryDM.ExecSQL;

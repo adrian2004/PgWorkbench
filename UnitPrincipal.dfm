@@ -196,7 +196,7 @@ object mainScreen: TmainScreen
       OnMouseLeave = lbNewDbMouseLeave
     end
     object imgAddDb: TImage
-      Left = 16
+      Left = 22
       Top = 125
       Width = 32
       Height = 32
@@ -262,7 +262,7 @@ object mainScreen: TmainScreen
     end
     object lbAddDb: TLabel
       Left = 60
-      Top = 135
+      Top = 130
       Width = 172
       Height = 17
       Cursor = crHandPoint
@@ -279,7 +279,7 @@ object mainScreen: TmainScreen
     end
     object lbOpenQuery: TLabel
       Left = 60
-      Top = 198
+      Top = 190
       Width = 90
       Height = 17
       Cursor = crHandPoint
@@ -295,8 +295,8 @@ object mainScreen: TmainScreen
       OnMouseLeave = lbOpenQueryMouseLeave
     end
     object imgQuery: TImage
-      Left = 16
-      Top = 193
+      Left = 22
+      Top = 183
       Width = 32
       Height = 32
       Cursor = crHandPoint
