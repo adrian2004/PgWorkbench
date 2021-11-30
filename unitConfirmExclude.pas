@@ -35,6 +35,9 @@ end;
 
 procedure TForm1.btnSimClick(Sender: TObject);
 begin
+
+  UnitDM.DataModule1.queryDM.Close;
+  UnitDM.DataModule1.queryDM.SQL.Clear;
   UnitDM.DataModule1.queryDM.SQL.Add('DELETE FROM connection WHERE id_con = ' + mainScreen.gridListDB.Fields[7].AsString);
   UnitDM.DataModule1.queryDM.ExecSQL;
 

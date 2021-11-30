@@ -488,7 +488,7 @@ object mainScreen: TmainScreen
           Visible = False
         end>
     end
-    object DBGrid1: TDBGrid
+    object gridListData: TDBGrid
       Left = 5
       Top = 360
       Width = 260

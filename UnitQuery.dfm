@@ -4,15 +4,14 @@ object queryEditor: TqueryEditor
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Editor SQL'
-  ClientHeight = 658
-  ClientWidth = 631
+  ClientHeight = 544
+  ClientWidth = 659
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 15
   object pgcQuery: TPageControl
@@ -36,20 +35,32 @@ object queryEditor: TqueryEditor
     end
   end
   object Button1: TButton
-    Left = 548
+    Left = 529
     Top = 450
-    Width = 75
-    Height = 25
+    Width = 94
+    Height = 39
     Caption = 'Executar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 448
+    Left = 401
     Top = 450
-    Width = 75
-    Height = 25
+    Width = 94
+    Height = 39
     Caption = 'Fechar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     OnClick = Button2Click
   end

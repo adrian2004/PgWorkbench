@@ -21,7 +21,7 @@ type
     lbNewDb: TLabel;
     imgAddDb: TImage;
     lbAddDb: TLabel;
-    DBGrid1: TDBGrid;
+    gridListData: TDBGrid;
     lbOpenQuery: TLabel;
     imgQuery: TImage;
     procedure lbNewDbMouseEnter(Sender: TObject);
@@ -102,7 +102,10 @@ end;
 
 procedure TmainScreen.imgQueryClick(Sender: TObject);
 begin
-  queryEditor.ShowModal;
+  if UnitNewDM.DataModule2.conDb.Connected = false then
+    ShowMessage('Nenhuma base conectada...')
+  else
+    queryEditor.ShowModal;
 end;
 
 procedure TmainScreen.imgQueryMouseEnter(Sender: TObject);
@@ -147,7 +150,10 @@ end;
 
 procedure TmainScreen.lbOpenQueryClick(Sender: TObject);
 begin
-  queryEditor.ShowModal;
+  if UnitNewDM.DataModule2.conDb.Connected = false then
+    ShowMessage('Nenhuma base conectada...')
+  else
+    queryEditor.ShowModal;
 end;
 
 procedure TmainScreen.lbOpenQueryMouseEnter(Sender: TObject);

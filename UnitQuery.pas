@@ -29,13 +29,16 @@ implementation
 
 {$R *.dfm}
 
-uses UnitNewDM;
+uses UnitNewDM, UnitPrincipal;
 
 procedure TqueryEditor.Button1Click(Sender: TObject);
 begin
   UnitNewDM.DataModule2.queryMain.SQL.Add(memoQuery1.Text);
   UnitNewDM.DataModule2.queryMain.ExecSQL;
   ShowMessage('Executado com sucesso!');
+
+  UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
+  UnitPrincipal.mainScreen.gridListData.DataSource.DataSet.Refresh;
 end;
 
 procedure TqueryEditor.Button2Click(Sender: TObject);
