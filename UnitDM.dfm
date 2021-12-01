@@ -71,4 +71,51 @@ object DataModule1: TDataModule1
     Left = 360
     Top = 24
   end
+  object tbConexao2: TFDTable
+    Active = True
+    DetailFields = 'apelido;database;driverid;password;port;server;username'
+    Connection = conConexao
+    TableName = '"connection"'
+    Left = 176
+    Top = 112
+    object WideStringField2: TWideStringField
+      DisplayWidth = 31
+      FieldName = 'server'
+      Origin = 'server'
+      Size = 50
+    end
+    object WideStringField5: TWideStringField
+      DisplayWidth = 20
+      FieldName = 'database'
+      Origin = '"database"'
+    end
+    object WideStringField7: TWideStringField
+      DisplayWidth = 10
+      FieldName = 'port'
+      Origin = 'port'
+      Size = 10
+    end
+    object WideStringField3: TWideStringField
+      DisplayWidth = 30
+      FieldName = 'username'
+      Origin = 'username'
+      Size = 30
+    end
+  end
+  object dsConexao2: TDataSource
+    DataSet = queryDM2
+    Left = 272
+    Top = 120
+  end
+  object queryDM2: TFDQuery
+    Active = True
+    MasterSource = dsConexao
+    MasterFields = 'apelido;database;driverid;password;server;username'
+    Connection = conConexao
+    SQL.Strings = (
+      'SELECT *'
+      'FROM connection')
+    Left = 360
+    Top = 120
+  end
 end

@@ -3,7 +3,7 @@ object formSelectServer: TformSelectServer
   Top = 0
   BorderIcons = []
   Caption = 'formSelectServer'
-  ClientHeight = 359
+  ClientHeight = 419
   ClientWidth = 626
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,11 +11,12 @@ object formSelectServer: TformSelectServer
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object Label1: TLabel
-    Left = 96
-    Top = 56
+    Left = 95
+    Top = 8
     Width = 423
     Height = 37
     Caption = 'O que deseja fazer com esta base'
@@ -27,8 +28,8 @@ object formSelectServer: TformSelectServer
     ParentFont = False
   end
   object btConnSS: TButton
-    Left = 87
-    Top = 168
+    Left = 95
+    Top = 288
     Width = 90
     Height = 41
     Caption = 'Conectar'
@@ -43,7 +44,7 @@ object formSelectServer: TformSelectServer
   end
   object btEditSS: TButton
     Left = 271
-    Top = 168
+    Top = 288
     Width = 90
     Height = 41
     Caption = 'Alterar'
@@ -57,8 +58,8 @@ object formSelectServer: TformSelectServer
     OnClick = btEditSSClick
   end
   object btDelSS: TButton
-    Left = 439
-    Top = 168
+    Left = 447
+    Top = 288
     Width = 90
     Height = 41
     Caption = 'Excluir'
@@ -73,7 +74,7 @@ object formSelectServer: TformSelectServer
   end
   object btCancSS: TButton
     Left = 271
-    Top = 264
+    Top = 352
     Width = 90
     Height = 41
     Caption = 'Cancelar'
@@ -85,5 +86,18 @@ object formSelectServer: TformSelectServer
     ParentFont = False
     TabOrder = 3
     OnClick = btCancSSClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Top = 51
+    Width = 577
+    Height = 225
+    DataSource = DataModule1.dsConexao2
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
   end
 end

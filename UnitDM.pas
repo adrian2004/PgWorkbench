@@ -24,6 +24,13 @@ type
     tbConexaodriverid: TWideStringField;
     tbConexaoport: TWideStringField;
     tbConexaoid_con: TIntegerField;
+    tbConexao2: TFDTable;
+    WideStringField2: TWideStringField;
+    WideStringField3: TWideStringField;
+    WideStringField5: TWideStringField;
+    WideStringField7: TWideStringField;
+    dsConexao2: TDataSource;
+    queryDM2: TFDQuery;
   private
     { Private declarations }
   public

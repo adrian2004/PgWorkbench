@@ -447,13 +447,19 @@ object mainScreen: TmainScreen
         item
           Expanded = False
           FieldName = 'apelido'
-          Width = 71
+          Title.Caption = 'SERVIDORES - APELIDO'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -13
+          Title.Font.Name = 'Segoe UI'
+          Title.Font.Style = [fsBold, fsUnderline]
+          Width = 159
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'server'
-          Visible = True
+          Visible = False
         end
         item
           Expanded = False
@@ -469,8 +475,8 @@ object mainScreen: TmainScreen
           Expanded = False
           FieldName = 'database'
           Title.Caption = 'databse'
-          Width = 82
-          Visible = True
+          Width = -1
+          Visible = False
         end
         item
           Expanded = False

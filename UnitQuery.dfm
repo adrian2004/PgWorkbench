@@ -28,8 +28,6 @@ object queryEditor: TqueryEditor
         Top = 3
         Width = 589
         Height = 389
-        Lines.Strings = (
-          'memoQuery1')
         TabOrder = 0
       end
     end
