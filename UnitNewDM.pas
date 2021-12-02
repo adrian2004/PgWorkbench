@@ -18,6 +18,9 @@ type
     dspNew: TDataSetProvider;
     cdNew: TClientDataSet;
     queryMain: TFDQuery;
+    dsQuery: TDataSource;
+    cdsQuery: TClientDataSet;
+    dspQuery: TDataSetProvider;
 //    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

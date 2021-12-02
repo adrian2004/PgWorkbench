@@ -33,7 +33,7 @@ implementation
 
 {$R *.dfm}
 
-uses unitConfirmCon, UnitPrincipal, UnitNewDM, UnitAlterDB, unitConfirmExclude,
+uses UnitPrincipal, UnitNewDM, UnitAlterDB, unitConfirmExclude,
   UnitDM;
 
 procedure TformSelectServer.btCancSSClick(Sender: TObject);
@@ -43,7 +43,26 @@ end;
 
 procedure TformSelectServer.btConnSSClick(Sender: TObject);
 begin
-  formConfirmCon.ShowModal;
+  UnitNewDM.DataModule2.cdNew.Close;
+  UnitNewDM.DataModule2.conDb.Connected := false;
+
+  UnitNewDM.DataModule2.conDb.Params.Clear;
+
+  UnitNewDM.DataModule2.conDb.Params.Values['Server'] := mainScreen.gridListDB.Fields[1].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['User_name'] := mainScreen.gridListDB.Fields[2].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['Password'] := mainScreen.gridListDB.Fields[3].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['Database'] := mainScreen.gridListDB.Fields[4].AsString;
+  UnitNewDM.DataModule2.conDb.Params.Values['Driverid'] := 'PG';
+  UnitNewDM.DataModule2.conDb.Params.Values['Port'] := mainScreen.gridListDB.Fields[6].AsString;
+
+  UnitNewDM.DataModule2.conDb.Connected := true;
+
+  UnitNewDM.DataModule2.cdNew.Open;
+
+  ShowMessage('Conectado com sucesso!');
+
+  Close;
+  formSelectServer.Close;
 end;
 
 procedure TformSelectServer.btDelSSClick(Sender: TObject);

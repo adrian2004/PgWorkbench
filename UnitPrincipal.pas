@@ -57,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitDM, unitAddDB, unitConfirmCon, UnitNewDM, UnitQuery, UnitSelectServer,
+uses UnitDM, unitAddDB, UnitNewDM, UnitQuery, UnitSelectServer,
   unitCreateServer;
 
 procedure TmainScreen.btnRunSqlClick(Sender: TObject);

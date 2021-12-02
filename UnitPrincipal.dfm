@@ -475,7 +475,6 @@ object mainScreen: TmainScreen
           Expanded = False
           FieldName = 'database'
           Title.Caption = 'databse'
-          Width = -1
           Visible = False
         end
         item

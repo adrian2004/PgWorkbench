@@ -1,6 +1,6 @@
 object DataModule2: TDataModule2
-  Height = 163
-  Width = 263
+  Height = 251
+  Width = 486
   PixelsPerInch = 120
   object conDb: TFDConnection
     Params.Strings = (
@@ -37,8 +37,26 @@ object DataModule2: TDataModule2
     Top = 8
   end
   object queryMain: TFDQuery
+    MasterSource = dsQuery
     Connection = conDb
     Left = 56
     Top = 82
+  end
+  object dsQuery: TDataSource
+    DataSet = cdsQuery
+    Left = 216
+    Top = 88
+  end
+  object cdsQuery: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspQuery'
+    Left = 168
+    Top = 88
+  end
+  object dspQuery: TDataSetProvider
+    DataSet = queryMain
+    Left = 112
+    Top = 96
   end
 end

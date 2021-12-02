@@ -12,6 +12,7 @@ object queryEditor: TqueryEditor
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object pgcQuery: TPageControl
@@ -22,7 +23,7 @@ object queryEditor: TqueryEditor
     ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = 'P'#225'gina 1'
+      Caption = 'SQL'
       object memoQuery1: TMemo
         Left = 0
         Top = 3
@@ -31,12 +32,30 @@ object queryEditor: TqueryEditor
         TabOrder = 0
       end
     end
+    object tabResult: TTabSheet
+      Caption = 'Resultado'
+      ImageIndex = 1
+      object gridQueryResult: TDBGrid
+        Left = 0
+        Top = 3
+        Width = 589
+        Height = 389
+        DataSource = DataModule2.dsQuery
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+      end
+    end
   end
   object Button1: TButton
-    Left = 529
-    Top = 450
+    Left = 409
+    Top = 448
     Width = 94
     Height = 39
+    HelpType = htKeyword
     Caption = 'Executar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -48,8 +67,8 @@ object queryEditor: TqueryEditor
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 401
-    Top = 450
+    Left = 522
+    Top = 448
     Width = 94
     Height = 39
     Caption = 'Fechar'
@@ -61,5 +80,18 @@ object queryEditor: TqueryEditor
     ParentFont = False
     TabOrder = 2
     OnClick = Button2Click
+  end
+  object pnQuery: TPanel
+    Left = 27
+    Top = 449
+    Width = 360
+    Height = 38
+    TabOrder = 3
+    object lbRows: TLabel
+      Left = 8
+      Top = 11
+      Width = 3
+      Height = 15
+    end
   end
 end

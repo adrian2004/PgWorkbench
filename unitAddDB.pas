@@ -39,7 +39,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitNewDM, UnitDM, unitConfirmCon, UnitPrincipal;
+uses UnitNewDM, UnitDM, UnitPrincipal;
 
 
 
