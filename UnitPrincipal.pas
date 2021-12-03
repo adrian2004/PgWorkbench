@@ -14,7 +14,7 @@ type
     btnRunSql: TBitBtn;
     gridListDB: TDBGrid;
     Label1: TLabel;
-    Edit1: TEdit;
+    editFilter: TEdit;
     pnLanding: TPanel;
     pnControl: TPanel;
     imgNewDb: TImage;
@@ -44,6 +44,9 @@ type
     procedure imgQueryMouseLeave(Sender: TObject);
     procedure lbNewDbClick(Sender: TObject);
     procedure imgNewDbClick(Sender: TObject);
+    procedure gridListDBDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure editFilterChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,9 +68,33 @@ begin
   formAddDb.ShowModal;
 end;
 
+procedure TmainScreen.editFilterChange(Sender: TObject);
+begin
+  UnitDM.DataModule1.tbConexao.Filter := 'apelido LIKE ''%'+editFilter.Text+'%''';
+  UnitDM.DataModule1.tbConexao.Filtered := true;
+end;
+
 procedure TmainScreen.gridListDBCellClick(Column: TColumn);
 begin
   formSelectServer.ShowModal;
+end;
+
+procedure TmainScreen.gridListDBDrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+var
+  nLinha: integer;
+begin
+  // obtém o número do registro (linha)
+  nLinha := gridListDb.DataSource.DataSet.RecNo;
+
+  // verifica se o número da linha é par ou ímpar, aplicando as cores
+  if Odd(nLinha) then
+    gridListDb.Canvas.Brush.Color := clMenu
+  else
+    gridListDb.Canvas.Brush.Color := clWhite;
+
+  // pinta a linha
+  gridListDb.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
 procedure TmainScreen.imgAddDbClick(Sender: TObject);

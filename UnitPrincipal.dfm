@@ -418,12 +418,13 @@ object mainScreen: TmainScreen
       Height = 15
       Caption = 'Pesquisar:'
     end
-    object Edit1: TEdit
+    object editFilter: TEdit
       Left = 83
       Top = 18
       Width = 142
       Height = 23
       TabOrder = 0
+      OnChange = editFilterChange
     end
     object gridListDB: TDBGrid
       Left = 5
@@ -443,6 +444,7 @@ object mainScreen: TmainScreen
       Touch.ParentTabletOptions = False
       Touch.TabletOptions = []
       OnCellClick = gridListDBCellClick
+      OnDrawColumnCell = gridListDBDrawColumnCell
       Columns = <
         item
           Expanded = False
@@ -453,7 +455,7 @@ object mainScreen: TmainScreen
           Title.Font.Height = -13
           Title.Font.Name = 'Segoe UI'
           Title.Font.Style = [fsBold, fsUnderline]
-          Width = 159
+          Width = 176
           Visible = True
         end
         item
