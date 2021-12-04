@@ -39,35 +39,44 @@ uses UnitNewDM, UnitPrincipal;
 procedure TqueryEditor.Button1Click(Sender: TObject);
 begin
   UnitNewDM.DataModule2.cdsQuery.Close;
+  UnitNewDM.DataModule2.queryMain.SQL.Clear;
   UnitNewDM.DataModule2.queryMain.SQL.Add(memoQuery1.Text);
 
-  if (memoQuery1.Text[1] in ['s','S']) then
-  begin
-    UnitNewDM.DataModule2.queryMain.Open;
-    UnitNewDM.DataModule2.cdsQuery.Open;
-    pgcQuery.ActivePageIndex := 1;
+  Screen.Cursor := crHourGlass;
+  try
+    begin
+      if (memoQuery1.Text[1] in ['s','S']) then
+        begin
+          try
+            UnitNewDM.DataModule2.queryMain.Open;
+            UnitNewDM.DataModule2.cdsQuery.Open;
+          except
+          on E : Exception do
+            ShowMessage('ERRO: ' + E.Message);
+          end;
+          pgcQuery.ActivePageIndex := 1;
+          lbRows.Caption := UnitNewDM.DataModule2.queryMain.RowsAffected.ToString + ' linhas retornadas';
+        end
+      else
+        begin
+          if (memoQuery1.Text[1] in ['i','I','c','C','u','U']) then
+            begin
+              try
+                UnitNewDM.DataModule2.queryMain.ExecSQL;
+              except
+              on E : Exception do
+                ShowMessage('ERRO: ' + E.Message);
+              end;
+            end
+          else
+            ShowMessage('Comando desconhecido');
+        end;
+    end;
+  finally
     lbRows.Caption := UnitNewDM.DataModule2.queryMain.RowsAffected.ToString + ' linhas retornadas';
+    UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
+    UnitPrincipal.mainScreen.gridListData.DataSource.DataSet.Refresh;
   end;
-  if (memoQuery1.Text[1] in ['i','I']) then
-  begin
-    UnitNewDM.DataModule2.queryMain.ExecSQL;
-    lbRows.Caption := UnitNewDM.DataModule2.queryMain.RowsAffected.ToString + ' linhas afetadas';
-  end;
-  if (memoQuery1.Text[1] in ['c','C']) then
-  begin
-    UnitNewDM.DataModule2.queryMain.ExecSQL;
-    lbRows.Caption := UnitNewDM.DataModule2.queryMain.RowsAffected.ToString + ' linhas afetadas';
-  end;
-  if (memoQuery1.Text[1] in ['u','U']) then
-  begin
-    UnitNewDM.DataModule2.queryMain.ExecSQL;
-
-    lbRows.Caption := UnitNewDM.DataModule2.queryMain.RowsAffected.ToString + ' linhas afetadas';
-  end;
-
-  UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
-  UnitPrincipal.mainScreen.gridListData.DataSource.DataSet.Refresh;
-  UnitNewDM.DataModule2.queryMain.SQL.Clear;
 end;
 
 procedure TqueryEditor.Button2Click(Sender: TObject);

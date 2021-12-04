@@ -11,7 +11,6 @@ uses
 type
   TmainScreen = class(TForm)
     pnNavbar: TPanel;
-    btnRunSql: TBitBtn;
     gridListDB: TDBGrid;
     Label1: TLabel;
     editFilter: TEdit;

@@ -12,6 +12,7 @@ object queryEditor: TqueryEditor
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OldCreateOrder = True
   Position = poDesigned
   OnShow = FormShow
   PixelsPerInch = 96
@@ -53,7 +54,7 @@ object queryEditor: TqueryEditor
   end
   object Button1: TButton
     Left = 404
-    Top = 512
+    Top = 511
     Width = 94
     Height = 39
     HelpType = htKeyword

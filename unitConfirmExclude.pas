@@ -26,7 +26,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitPrincipal, UnitDM;
+uses UnitPrincipal, UnitDM, UnitSelectServer;
 
 procedure TForm1.btnNaoClick(Sender: TObject);
 begin
@@ -46,6 +46,7 @@ begin
   UnitPrincipal.mainScreen.gridListDB.DataSource.DataSet.Refresh;
 
   Close;
+  formSelectServer.Close;
 end;
 
 end.
