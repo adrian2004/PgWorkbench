@@ -18,8 +18,8 @@ object queryEditor: TqueryEditor
   PixelsPerInch = 96
   TextHeight = 15
   object pgcQuery: TPageControl
-    Left = 15
-    Top = 8
+    Left = 11
+    Top = 42
     Width = 600
     Height = 489
     ActivePage = TabSheet1
@@ -53,8 +53,8 @@ object queryEditor: TqueryEditor
     end
   end
   object Button1: TButton
-    Left = 404
-    Top = 511
+    Left = 513
+    Top = 537
     Width = 94
     Height = 39
     HelpType = htKeyword
@@ -69,8 +69,8 @@ object queryEditor: TqueryEditor
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 517
-    Top = 512
+    Left = 405
+    Top = 537
     Width = 94
     Height = 39
     Caption = 'Fechar'
@@ -85,7 +85,7 @@ object queryEditor: TqueryEditor
   end
   object pnQuery: TPanel
     Left = 22
-    Top = 513
+    Top = 537
     Width = 360
     Height = 38
     TabOrder = 3

@@ -52,8 +52,9 @@ begin
             UnitNewDM.DataModule2.cdsQuery.Open;
           except
           on E : Exception do
-            ShowMessage('ERRO: ' + E.Message);
+            raise exception.create('ERRO:' + E.Message);
           end;
+
           pgcQuery.ActivePageIndex := 1;
           lbRows.Caption := UnitNewDM.DataModule2.queryMain.RowsAffected.ToString + ' linhas retornadas';
         end
