@@ -6,11 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
   Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage, System.IniFiles, ShellApi;
+  Vcl.Imaging.pngimage, System.IniFiles, ShellApi, Vcl.Menus;
 
 type
   TmainScreen = class(TForm)
-    pnNavbar: TPanel;
     gridListDB: TDBGrid;
     Label1: TLabel;
     editFilter: TEdit;
@@ -34,6 +33,21 @@ type
     imgHelp: TImage;
     lbInfo: TLabel;
     lbHelp: TLabel;
+    MainMenu1: TMainMenu;
+    Database1: TMenuItem;
+    Database2: TMenuItem;
+    Ajuda1: TMenuItem;
+    Nova1: TMenuItem;
+    Novaexistente1: TMenuItem;
+    EditorSQL1: TMenuItem;
+    Documentao1: TMenuItem;
+    Comousar1: TMenuItem;
+    Sair1: TMenuItem;
+    pnIcons: TPanel;
+    Image4: TImage;
+    Image6: TImage;
+    Image7: TImage;
+    pnSearch: TPanel;
     procedure lbNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseLeave(Sender: TObject);
@@ -67,6 +81,14 @@ type
     procedure imgHelpMouseLeave(Sender: TObject);
     procedure lbHelpMouseEnter(Sender: TObject);
     procedure lbHelpMouseLeave(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
+    procedure Comousar1Click(Sender: TObject);
+    procedure EditorSQL1Click(Sender: TObject);
+    procedure Nova1Click(Sender: TObject);
+    procedure Novaexistente1Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
+    procedure Image6Click(Sender: TObject);
+    procedure Image7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -88,10 +110,23 @@ begin
   Novo.ShowModal;
 end;
 
+procedure TmainScreen.Comousar1Click(Sender: TObject);
+begin
+shellexecute(handle,'open','https://github.com/adrian2004/PgWorkbench/blob/master/README.md',nil,nil,0);
+end;
+
 procedure TmainScreen.editFilterChange(Sender: TObject);
 begin
   UnitDM.DataModule1.tbConexao.Filter := 'apelido LIKE ''%'+editFilter.Text+'%''';
   UnitDM.DataModule1.tbConexao.Filtered := true;
+end;
+
+procedure TmainScreen.EditorSQL1Click(Sender: TObject);
+begin
+  if UnitNewDM.DataModule2.conDb.Connected = false then
+    ShowMessage('Nenhuma base conectada...')
+  else
+    queryEditor.ShowModal;
 end;
 
 procedure TmainScreen.gridListDBCellClick(Column: TColumn);
@@ -115,6 +150,24 @@ begin
 
   // pinta a linha
   gridListDb.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+end;
+
+procedure TmainScreen.Image4Click(Sender: TObject);
+begin
+  Novo.ShowModal;
+end;
+
+procedure TmainScreen.Image6Click(Sender: TObject);
+begin
+  unitCreateServer.Criar.ShowModal;
+end;
+
+procedure TmainScreen.Image7Click(Sender: TObject);
+begin
+  if UnitNewDM.DataModule2.conDb.Connected = false then
+    ShowMessage('Nenhuma base conectada...')
+  else
+    queryEditor.ShowModal;
 end;
 
 procedure TmainScreen.imgHelpClick(Sender: TObject);
@@ -261,6 +314,21 @@ end;
 procedure TmainScreen.lbOpenQueryMouseLeave(Sender: TObject);
 begin
   lbOpenQuery.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.Nova1Click(Sender: TObject);
+begin
+  unitCreateServer.Criar.ShowModal;
+end;
+
+procedure TmainScreen.Novaexistente1Click(Sender: TObject);
+begin
+  Novo.ShowModal;
+end;
+
+procedure TmainScreen.Sair1Click(Sender: TObject);
+begin
+  Close;
 end;
 
 end.
