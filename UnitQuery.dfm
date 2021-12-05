@@ -18,8 +18,8 @@ object queryEditor: TqueryEditor
   PixelsPerInch = 96
   TextHeight = 15
   object pgcQuery: TPageControl
-    Left = 11
-    Top = 42
+    Left = 16
+    Top = 8
     Width = 600
     Height = 489
     ActivePage = TabSheet1
@@ -53,10 +53,10 @@ object queryEditor: TqueryEditor
     end
   end
   object Button1: TButton
-    Left = 513
-    Top = 537
-    Width = 94
-    Height = 39
+    Left = 537
+    Top = 527
+    Width = 75
+    Height = 32
     HelpType = htKeyword
     Caption = 'Executar'
     Font.Charset = DEFAULT_CHARSET
@@ -69,10 +69,10 @@ object queryEditor: TqueryEditor
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 405
-    Top = 537
-    Width = 94
-    Height = 39
+    Left = 456
+    Top = 527
+    Width = 75
+    Height = 31
     Caption = 'Fechar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -84,14 +84,20 @@ object queryEditor: TqueryEditor
     OnClick = Button2Click
   end
   object pnQuery: TPanel
-    Left = 22
-    Top = 537
-    Width = 360
-    Height = 38
+    Left = 16
+    Top = 512
+    Width = 425
+    Height = 63
     TabOrder = 3
     object lbRows: TLabel
-      Left = 8
-      Top = 11
+      Left = 11
+      Top = 10
+      Width = 3
+      Height = 15
+    end
+    object lbError: TLabel
+      Left = 11
+      Top = 31
       Width = 3
       Height = 15
     end

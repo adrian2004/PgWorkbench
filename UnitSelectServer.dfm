@@ -11,6 +11,7 @@ object formSelectServer: TformSelectServer
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OldCreateOrder = True
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
@@ -89,10 +90,11 @@ object formSelectServer: TformSelectServer
   end
   object DBGrid1: TDBGrid
     Left = 24
-    Top = 51
+    Top = 48
     Width = 577
     Height = 225
     DataSource = DataModule1.dsConexao2
+    DrawingStyle = gdsClassic
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

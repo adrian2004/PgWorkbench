@@ -1,7 +1,7 @@
 object DataModule1: TDataModule1
+  OldCreateOrder = True
   Height = 251
   Width = 486
-  PixelsPerInch = 120
   object conConexao: TFDConnection
     Params.Strings = (
       'Server=127.0.0.1'

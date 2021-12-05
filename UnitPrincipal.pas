@@ -23,6 +23,17 @@ type
     gridListData: TDBGrid;
     lbOpenQuery: TLabel;
     imgQuery: TImage;
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Label2: TLabel;
+    Label3: TLabel;
+    Image4: TImage;
+    Image5: TImage;
+    Label4: TLabel;
+    Image6: TImage;
+    Label5: TLabel;
+    Label6: TLabel;
     procedure lbNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseLeave(Sender: TObject);

@@ -18,6 +18,7 @@ type
     gridQueryResult: TDBGrid;
     pnQuery: TPanel;
     lbRows: TLabel;
+    lbError: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -38,6 +39,8 @@ uses UnitNewDM, UnitPrincipal;
 
 procedure TqueryEditor.Button1Click(Sender: TObject);
 begin
+  lbRows.Caption := '';
+  lbError.Caption := '';
   UnitNewDM.DataModule2.cdsQuery.Close;
   UnitNewDM.DataModule2.queryMain.SQL.Clear;
   UnitNewDM.DataModule2.queryMain.SQL.Add(memoQuery1.Text);
@@ -50,13 +53,11 @@ begin
           try
             UnitNewDM.DataModule2.queryMain.Open;
             UnitNewDM.DataModule2.cdsQuery.Open;
+            pgcQuery.ActivePageIndex := 1;
           except
           on E : Exception do
-            raise exception.create('ERRO:' + E.Message);
+            lbError.Caption := E.Message;
           end;
-
-          pgcQuery.ActivePageIndex := 1;
-          lbRows.Caption := UnitNewDM.DataModule2.queryMain.RowsAffected.ToString + ' linhas retornadas';
         end
       else
         begin
@@ -66,7 +67,7 @@ begin
                 UnitNewDM.DataModule2.queryMain.ExecSQL;
               except
               on E : Exception do
-                ShowMessage('ERRO: ' + E.Message);
+                lbError.Caption := E.Message;
               end;
             end
           else

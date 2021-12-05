@@ -1,7 +1,7 @@
 object DataModule2: TDataModule2
+  OldCreateOrder = True
   Height = 251
   Width = 486
-  PixelsPerInch = 120
   object conDb: TFDConnection
     Params.Strings = (
       'DriverID=PG')
