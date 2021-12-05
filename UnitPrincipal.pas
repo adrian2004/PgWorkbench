@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
   Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage, System.IniFiles;
+  Vcl.Imaging.pngimage, System.IniFiles, ShellApi;
 
 type
   TmainScreen = class(TForm)
@@ -28,12 +28,12 @@ type
     Image3: TImage;
     Label2: TLabel;
     Label3: TLabel;
-    Image4: TImage;
+    imgInfo: TImage;
     Image5: TImage;
     Label4: TLabel;
-    Image6: TImage;
-    Label5: TLabel;
-    Label6: TLabel;
+    imgHelp: TImage;
+    lbInfo: TLabel;
+    lbHelp: TLabel;
     procedure lbNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseLeave(Sender: TObject);
@@ -57,6 +57,16 @@ type
     procedure gridListDBDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure editFilterChange(Sender: TObject);
+    procedure lbHelpClick(Sender: TObject);
+    procedure imgHelpClick(Sender: TObject);
+    procedure lbInfoMouseEnter(Sender: TObject);
+    procedure lbInfoMouseLeave(Sender: TObject);
+    procedure imgInfoMouseEnter(Sender: TObject);
+    procedure imgInfoMouseLeave(Sender: TObject);
+    procedure imgHelpMouseEnter(Sender: TObject);
+    procedure imgHelpMouseLeave(Sender: TObject);
+    procedure lbHelpMouseEnter(Sender: TObject);
+    procedure lbHelpMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -107,6 +117,31 @@ begin
   gridListDb.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
+procedure TmainScreen.imgHelpClick(Sender: TObject);
+begin
+  shellexecute(handle,'open','https://github.com/adrian2004/PgWorkbench/blob/master/README.md',nil,nil,0);
+end;
+
+procedure TmainScreen.imgHelpMouseEnter(Sender: TObject);
+begin
+  lbHelp.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TmainScreen.imgHelpMouseLeave(Sender: TObject);
+begin
+  lbHelp.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.imgInfoMouseEnter(Sender: TObject);
+begin
+  lbInfo.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TmainScreen.imgInfoMouseLeave(Sender: TObject);
+begin
+  lbInfo.Font.Style := [fsItalic];
+end;
+
 procedure TmainScreen.imgAddDbClick(Sender: TObject);
 begin
   formAddDb.ShowModal;
@@ -153,6 +188,31 @@ end;
 procedure TmainScreen.imgQueryMouseLeave(Sender: TObject);
 begin
   lbOpenQuery.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.lbHelpClick(Sender: TObject);
+begin
+  shellexecute(handle,'open','https://github.com/adrian2004/PgWorkbench/blob/master/README.md',nil,nil,0);
+end;
+
+procedure TmainScreen.lbHelpMouseEnter(Sender: TObject);
+begin
+  lbHelp.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TmainScreen.lbHelpMouseLeave(Sender: TObject);
+begin
+  lbHelp.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.lbInfoMouseEnter(Sender: TObject);
+begin
+  lbInfo.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TmainScreen.lbInfoMouseLeave(Sender: TObject);
+begin
+    lbInfo.Font.Style := [fsItalic];
 end;
 
 procedure TmainScreen.lbAddDbClick(Sender: TObject);

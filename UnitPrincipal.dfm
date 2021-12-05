@@ -6086,7 +6086,6 @@ object mainScreen: TmainScreen
     Align = alTop
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 8
   end
   object pnLanding: TPanel
     Left = 304
@@ -6097,7 +6096,7 @@ object mainScreen: TmainScreen
     ParentBackground = False
     TabOrder = 1
     object Image5: TImage
-      Left = -104
+      Left = -111
       Top = 348
       Width = 753
       Height = 88
@@ -40292,7 +40291,7 @@ object mainScreen: TmainScreen
     end
     object lbAddDb: TLabel
       Left = 60
-      Top = 224
+      Top = 223
       Width = 172
       Height = 17
       Cursor = crHandPoint
@@ -40309,7 +40308,7 @@ object mainScreen: TmainScreen
     end
     object lbOpenQuery: TLabel
       Left = 60
-      Top = 325
+      Top = 328
       Width = 90
       Height = 17
       Cursor = crHandPoint
@@ -47310,11 +47309,12 @@ object mainScreen: TmainScreen
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object Image4: TImage
-      Left = 22
+    object imgInfo: TImage
+      Left = 24
       Top = 421
       Width = 30
       Height = 33
+      Cursor = crHandPoint
       Picture.Data = {
         07544269746D6170360C0000424D360C00000000000036000000280000002000
         0000200000000100180000000000000C00007412000074120000000000000000
@@ -47415,6 +47415,8 @@ object mainScreen: TmainScreen
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFF}
+      OnMouseEnter = imgInfoMouseEnter
+      OnMouseLeave = imgInfoMouseLeave
     end
     object Label4: TLabel
       Left = 6
@@ -47429,11 +47431,12 @@ object mainScreen: TmainScreen
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object Image6: TImage
+    object imgHelp: TImage
       Left = 24
       Top = 460
       Width = 30
       Height = 33
+      Cursor = crHandPoint
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
         00200806000000737A7AF4000008234944415478DAAD577B5054D719FFDD7DEF
@@ -47503,12 +47506,16 @@ object mainScreen: TmainScreen
         5860390616826165AF2A6A6C693488DC8A13A2C018582606213A2B6F74963C59
         304A7738FA5D5A2AC8FFFA704B395FC9F31FD3FB787D37940639000000004945
         4E44AE426082}
+      OnClick = imgHelpClick
+      OnMouseEnter = imgHelpMouseEnter
+      OnMouseLeave = imgHelpMouseLeave
     end
-    object Label5: TLabel
+    object lbInfo: TLabel
       Left = 60
-      Top = 425
+      Top = 427
       Width = 84
       Height = 17
+      Cursor = crHandPoint
       Caption = 'Documenta'#231#227'o'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -47516,12 +47523,15 @@ object mainScreen: TmainScreen
       Font.Name = 'Segoe UI'
       Font.Style = [fsItalic]
       ParentFont = False
+      OnMouseEnter = lbInfoMouseEnter
+      OnMouseLeave = lbInfoMouseLeave
     end
-    object Label6: TLabel
+    object lbHelp: TLabel
       Left = 60
       Top = 464
       Width = 159
       Height = 17
+      Cursor = crHandPoint
       Caption = 'Como usar o PG Workbench'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -47529,6 +47539,9 @@ object mainScreen: TmainScreen
       Font.Name = 'Segoe UI'
       Font.Style = [fsItalic]
       ParentFont = False
+      OnClick = lbHelpClick
+      OnMouseEnter = lbHelpMouseEnter
+      OnMouseLeave = lbHelpMouseLeave
     end
   end
   object pnControl: TPanel
