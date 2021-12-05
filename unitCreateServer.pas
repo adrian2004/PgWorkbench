@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm2 = class(TForm)
+  TCriar = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -31,7 +31,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  Criar: TCriar;
 
 implementation
 
@@ -39,12 +39,12 @@ implementation
 
 uses UnitDM, UnitPrincipal;
 
-procedure TForm2.btCancelClick(Sender: TObject);
+procedure TCriar.btCancelClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TForm2.btNewDBClick(Sender: TObject);
+procedure TCriar.btNewDBClick(Sender: TObject);
 begin
 
   UnitDM.DataModule1.queryDM.Close;

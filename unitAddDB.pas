@@ -8,7 +8,7 @@ uses
   Vcl.DBCtrls, System.IniFiles;
 
 type
-  TformAddDb = class(TForm)
+  TNovo = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -33,7 +33,7 @@ type
   end;
 
 var
-  formAddDb: TformAddDb;
+  Novo: TNovo;
 
 implementation
 
@@ -43,7 +43,7 @@ uses UnitNewDM, UnitDM, UnitPrincipal;
 
 
 
-procedure TformAddDb.btCancelClick(Sender: TObject);
+procedure TNovo.btCancelClick(Sender: TObject);
 begin
   txtNewApelido.Clear;
   txtNewServer.Clear;
@@ -57,7 +57,7 @@ begin
   Close;
 end;
 
-procedure TformAddDb.btNewDBClick(Sender: TObject);
+procedure TNovo.btNewDBClick(Sender: TObject);
 
 begin
 
@@ -81,7 +81,7 @@ begin
   Close;
 end;
 
-procedure TformAddDb.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TNovo.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   txtNewApelido.Clear;
   txtNewServer.Clear;

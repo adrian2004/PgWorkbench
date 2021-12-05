@@ -67,12 +67,12 @@ end;
 
 procedure TformSelectServer.btDelSSClick(Sender: TObject);
 begin
-  unitConfirmExclude.Form1.ShowModal;
+  unitConfirmExclude.Confirmar.ShowModal;
 end;
 
 procedure TformSelectServer.btEditSSClick(Sender: TObject);
 begin
-  UnitAlterDB.formAlterDb.ShowModal;
+  UnitAlterDB.Alterar.ShowModal;
 end;
 
 procedure TformSelectServer.FormShow(Sender: TObject);

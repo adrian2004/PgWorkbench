@@ -85,7 +85,7 @@ uses UnitDM, unitAddDB, UnitNewDM, UnitQuery, UnitSelectServer,
 
 procedure TmainScreen.btnRunSqlClick(Sender: TObject);
 begin
-  formAddDb.ShowModal;
+  Novo.ShowModal;
 end;
 
 procedure TmainScreen.editFilterChange(Sender: TObject);
@@ -144,7 +144,7 @@ end;
 
 procedure TmainScreen.imgAddDbClick(Sender: TObject);
 begin
-  formAddDb.ShowModal;
+  Novo.ShowModal;
 end;
 
 procedure TmainScreen.imgAddDbMouseEnter(Sender: TObject);
@@ -159,7 +159,7 @@ end;
 
 procedure TmainScreen.imgNewDbClick(Sender: TObject);
 begin
-  unitCreateServer.Form2.ShowModal;
+  unitCreateServer.Criar.ShowModal;
 end;
 
 procedure TmainScreen.imgNewDbMouseEnter(Sender: TObject);
@@ -217,7 +217,7 @@ end;
 
 procedure TmainScreen.lbAddDbClick(Sender: TObject);
 begin
-  formAddDb.ShowModal;
+  Novo.ShowModal;
 end;
 
 procedure TmainScreen.lbAddDbMouseEnter(Sender: TObject);
@@ -232,7 +232,7 @@ end;
 
 procedure TmainScreen.lbNewDbClick(Sender: TObject);
 begin
-  unitCreateServer.Form2.ShowModal;
+  unitCreateServer.Criar.ShowModal;
 end;
 
 procedure TmainScreen.lbNewDbMouseEnter(Sender: TObject);

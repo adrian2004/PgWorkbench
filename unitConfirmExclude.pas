@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TConfirmar = class(TForm)
     Label1: TLabel;
     btnSim: TButton;
     btnNao: TButton;
@@ -20,7 +20,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  Confirmar: TConfirmar;
 
 implementation
 
@@ -28,12 +28,12 @@ implementation
 
 uses UnitPrincipal, UnitDM, UnitSelectServer;
 
-procedure TForm1.btnNaoClick(Sender: TObject);
+procedure TConfirmar.btnNaoClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TForm1.btnSimClick(Sender: TObject);
+procedure TConfirmar.btnSimClick(Sender: TObject);
 begin
 
   UnitDM.DataModule1.queryDM.Close;

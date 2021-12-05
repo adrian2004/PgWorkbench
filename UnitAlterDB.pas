@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TformAlterDb = class(TForm)
+  TAlterar = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -32,7 +32,7 @@ type
   end;
 
 var
-  formAlterDb: TformAlterDb;
+  Alterar: TAlterar;
 
 implementation
 
@@ -40,12 +40,12 @@ implementation
 
 uses UnitPrincipal, UnitDM;
 
-procedure TformAlterDb.btCancelClick(Sender: TObject);
+procedure TAlterar.btCancelClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TformAlterDb.btNewDBClick(Sender: TObject);
+procedure TAlterar.btNewDBClick(Sender: TObject);
 begin
   UnitDM.DataModule1.queryDM.Close;
   UnitDM.DataModule1.queryDM.SQL.Clear;
@@ -74,7 +74,7 @@ begin
 
 end;
 
-procedure TformAlterDb.FormShow(Sender: TObject);
+procedure TAlterar.FormShow(Sender: TObject);
 begin
   txtNewApelido.Text := mainScreen.gridListDB.Fields[0].AsString;
   txtNewServer.Text := mainScreen.gridListDB.Fields[1].AsString;
