@@ -110,7 +110,7 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="unitAddDB.pas">
-            <Form>formAddDb</Form>
+            <Form>Novo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UnitNewDM.pas">
@@ -127,14 +127,14 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UnitAlterDB.pas">
-            <Form>formAlterDb</Form>
+            <Form>Alterar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitConfirmExclude.pas">
-            <Form>Form1</Form>
+            <Form>Confirmar</Form>
         </DCCReference>
         <DCCReference Include="unitCreateServer.pas">
-            <Form>Form2</Form>
+            <Form>Criar</Form>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

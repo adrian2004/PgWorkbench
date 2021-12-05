@@ -48,6 +48,8 @@ type
     Image6: TImage;
     Image7: TImage;
     pnSearch: TPanel;
+    Image8: TImage;
+    Image9: TImage;
     procedure lbNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseEnter(Sender: TObject);
     procedure imgNewDbMouseLeave(Sender: TObject);
@@ -88,7 +90,7 @@ type
     procedure Novaexistente1Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
     procedure Image6Click(Sender: TObject);
-    procedure Image7Click(Sender: TObject);
+    procedure Image9Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -162,12 +164,9 @@ begin
   unitCreateServer.Criar.ShowModal;
 end;
 
-procedure TmainScreen.Image7Click(Sender: TObject);
+procedure TmainScreen.Image9Click(Sender: TObject);
 begin
-  if UnitNewDM.DataModule2.conDb.Connected = false then
-    ShowMessage('Nenhuma base conectada...')
-  else
-    queryEditor.ShowModal;
+  shellexecute(handle,'open','https://github.com/adrian2004/PgWorkbench/blob/master/README.md',nil,nil,0);
 end;
 
 procedure TmainScreen.imgHelpClick(Sender: TObject);
