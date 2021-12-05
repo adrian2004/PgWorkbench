@@ -40202,7 +40202,7 @@ object mainScreen: TmainScreen
     end
     object lbNewDb: TLabel
       Left = 60
-      Top = 187
+      Top = 185
       Width = 115
       Height = 17
       Cursor = crHandPoint
@@ -47408,6 +47408,7 @@ object mainScreen: TmainScreen
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFF}
+      OnClick = imgInfoClick
       OnMouseEnter = imgInfoMouseEnter
       OnMouseLeave = imgInfoMouseLeave
     end
@@ -47516,6 +47517,7 @@ object mainScreen: TmainScreen
       Font.Name = 'Segoe UI'
       Font.Style = [fsItalic]
       ParentFont = False
+      OnClick = lbInfoClick
       OnMouseEnter = lbInfoMouseEnter
       OnMouseLeave = lbInfoMouseLeave
     end
@@ -47640,6 +47642,7 @@ object mainScreen: TmainScreen
       Top = 2
       Width = 25
       Height = 25
+      Hint = 'Add DB'
       Picture.Data = {
         07544269746D6170F6060000424DF60600000000000036000000280000001800
         0000180000000100180000000000C00600007412000074120000000000000000
@@ -47705,6 +47708,7 @@ object mainScreen: TmainScreen
       Top = 2
       Width = 25
       Height = 25
+      Hint = 'Criar DB'
       Picture.Data = {
         07544269746D6170F6060000424DF60600000000000036000000280000001800
         0000180000000100180000000000C00600007412000074120000000000000000
@@ -47770,6 +47774,7 @@ object mainScreen: TmainScreen
       Top = 2
       Width = 25
       Height = 25
+      Hint = 'Editor SQL'
       Picture.Data = {
         07544269746D6170F6060000424DF60600000000000036000000280000001800
         0000180000000100180000000000C00600007412000074120000000000000000
@@ -47834,6 +47839,7 @@ object mainScreen: TmainScreen
       Top = 2
       Width = 25
       Height = 25
+      Hint = 'Documenta'#231#227'o'
       Picture.Data = {
         07544269746D6170F6060000424DF60600000000000036000000280000001800
         0000180000000100180000000000C00600007412000074120000000000000000
@@ -47892,12 +47898,14 @@ object mainScreen: TmainScreen
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1F1F1E3E2E2E1E1
         E1F4F4F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFF}
+      OnClick = Image8Click
     end
     object Image9: TImage
       Left = 132
       Top = 2
       Width = 25
       Height = 25
+      Hint = 'Ajuda'
       Picture.Data = {
         07544269746D6170F6060000424DF60600000000000036000000280000001800
         0000180000000100180000000000C00600007412000074120000000000000000
@@ -48007,6 +48015,7 @@ object mainScreen: TmainScreen
       Caption = 'Ajuda'
       object Documentao1: TMenuItem
         Caption = 'Documenta'#231#227'o'
+        OnClick = Documentao1Click
       end
       object Comousar1: TMenuItem
         Caption = 'Como usar'

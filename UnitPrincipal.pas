@@ -91,6 +91,10 @@ type
     procedure Image4Click(Sender: TObject);
     procedure Image6Click(Sender: TObject);
     procedure Image9Click(Sender: TObject);
+    procedure imgInfoClick(Sender: TObject);
+    procedure lbInfoClick(Sender: TObject);
+    procedure Image8Click(Sender: TObject);
+    procedure Documentao1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -115,6 +119,11 @@ end;
 procedure TmainScreen.Comousar1Click(Sender: TObject);
 begin
 shellexecute(handle,'open','https://github.com/adrian2004/PgWorkbench/blob/master/README.md',nil,nil,0);
+end;
+
+procedure TmainScreen.Documentao1Click(Sender: TObject);
+begin
+  shellexecute(handle,'open','https://docs.google.com/document/d/1VSwMqA_y7oVrvu7gAfqdRDAByx3ctJz2/edit',nil,nil,0);
 end;
 
 procedure TmainScreen.editFilterChange(Sender: TObject);
@@ -164,6 +173,11 @@ begin
   unitCreateServer.Criar.ShowModal;
 end;
 
+procedure TmainScreen.Image8Click(Sender: TObject);
+begin
+  shellexecute(handle,'open','https://docs.google.com/document/d/1VSwMqA_y7oVrvu7gAfqdRDAByx3ctJz2/edit',nil,nil,0);
+end;
+
 procedure TmainScreen.Image9Click(Sender: TObject);
 begin
   shellexecute(handle,'open','https://github.com/adrian2004/PgWorkbench/blob/master/README.md',nil,nil,0);
@@ -182,6 +196,11 @@ end;
 procedure TmainScreen.imgHelpMouseLeave(Sender: TObject);
 begin
   lbHelp.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.imgInfoClick(Sender: TObject);
+begin
+  shellexecute(handle,'open','https://docs.google.com/document/d/1VSwMqA_y7oVrvu7gAfqdRDAByx3ctJz2/edit',nil,nil,0);
 end;
 
 procedure TmainScreen.imgInfoMouseEnter(Sender: TObject);
@@ -255,6 +274,11 @@ end;
 procedure TmainScreen.lbHelpMouseLeave(Sender: TObject);
 begin
   lbHelp.Font.Style := [fsItalic];
+end;
+
+procedure TmainScreen.lbInfoClick(Sender: TObject);
+begin
+  shellexecute(handle,'open','https://docs.google.com/document/d/1VSwMqA_y7oVrvu7gAfqdRDAByx3ctJz2/edit',nil,nil,0);
 end;
 
 procedure TmainScreen.lbInfoMouseEnter(Sender: TObject);
